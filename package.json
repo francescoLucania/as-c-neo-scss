@@ -1,0 +1,19 @@
+{
+  "name": "as-c-neo-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francescoLucania/as-c-neo-scss.git"
+  },
+  "author": "francescolucaniacom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francescoLucania/as-c-neo-scss/issues"
+  },
+  "homepage": "https://github.com/francescoLucania/as-c-neo-scss#readme"
+}
