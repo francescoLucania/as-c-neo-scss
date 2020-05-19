@@ -256,8 +256,10 @@
 	font-family: $font-family-title;
 
 	a {
+		@include interact(text-decoration, underline);
+
 		font-weight: inherit;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 }
 
@@ -1101,22 +1103,4 @@
 		}
 	}
 
-}
-
-@mixin screen-1365 () {
-	@media (max-width:1365px) {
-		@content;
-	}
-}
-
-@mixin screen-919 () {
-	@media (max-width:919px) {
-		@content;
-	}
-}
-
-@mixin screen-639 () {
-	@media (max-width:639px) {
-		@content;
-	}
 }
