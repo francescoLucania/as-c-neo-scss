@@ -106,20 +106,33 @@
 	}
 }
 
-@mixin text-base($font-weight: $font-weight-text) {
-	font-size: 1.4rem;
-	line-height: 2rem;
-
-	font-weight: $font-weight;
-}
-
 @mixin text-base-big($font-weight: $font-weight-text) {
 	@include font(1.8rem, 2.4rem);
 
 	font-weight: $font-weight;
 
 	> a {
-		font-weight: inherit;
+		font-weight: 700;
+	}
+}
+
+@mixin text-base($font-weight: $font-weight-text) {
+	font-size: 1.4rem;
+	line-height: 2rem;
+	font-weight: $font-weight;
+
+	> a {
+		font-weight: 500;
+	}
+}
+
+@mixin text-small($font-weight: $font-weight-text) {
+	@include font(1.2rem, 1.6rem);
+
+	font-weight: $font-weight;
+
+	> a {
+		font-weight: 500;
 	}
 }
 
@@ -323,15 +336,6 @@
 	text-decoration: none;
 }
 
-@mixin text-small($font-weight: $font-weight-text) {
-	@include font(1.3rem, 2rem);
-
-	font-weight: $font-weight;
-
-	> a {
-		font-weight: 400;
-	}
-}
 
 @mixin link-small {
 	@include text-small;
