@@ -364,13 +364,13 @@
 	text-decoration: none;
 }
 
-@mixin text-minimal($font-weight: 300) {
+@mixin text-minimal($font-weight: 400) {
 	@include font(1.2rem, 1.6rem);
 
 	font-weight: $font-weight;
 
 	> a {
-		font-weight: 400;
+		font-weight: 500;
 	}
 }
 
