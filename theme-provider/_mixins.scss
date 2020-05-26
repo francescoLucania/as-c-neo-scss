@@ -269,7 +269,7 @@
 	transition: outline 0ms;
 
 	&:focus {
-		background: $brand-blue-green;
+		background: $brand-green-pea;
 		color: #fff;
 	}
 
@@ -284,8 +284,8 @@
 	transition: all $transition-duration-base-min outline 0ms;
 
 	&:focus {
-		background: $color-lightest-secondary;
-		color: $color-base;
+		background: #fff;
+		box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
 	}
 }
 
