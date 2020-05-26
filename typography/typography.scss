@@ -131,11 +131,6 @@
 
 	font-weight: $font-weight;
 
-	> a {
-		font-weight: 500;
-	}
-}
-
 // atomic classes
 
 .as-c-header-h1 {
@@ -368,10 +363,6 @@
 	@include font(1.2rem, 1.6rem);
 
 	font-weight: $font-weight;
-
-	> a {
-		font-weight: 500;
-	}
 }
 
 @mixin link-minimal {
