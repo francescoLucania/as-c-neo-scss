@@ -1,0 +1,503 @@
+@charset "UTF-8";
+
+.main-breadcrumbs {
+	position: relative;
+	z-index: 154;
+	background: #fff;
+	
+	[data-background="new-loyalty-program"] &,
+	[data-background="promo"] &,
+	[data-color-type="vtb"] &,
+	[data-color-type="gazprombank-blue"] &,
+	[data-background="gradient-dark"] &,
+	[data-background="gradient-medium-dark"] &,
+	.loyalty-program-header & {
+		background: transparent;
+	}
+
+	[data-background="gradient-dark"] &,
+	[data-background="gradient-medium-dark"] & {
+		@include mq-custom(max, 919px) {
+			background: $color-light;
+			border-color: rgba(255, 255, 255, 0.1);
+		}
+	}
+
+	[data-color-type="vtb"] & {
+		background: $brand-vtb-blue;
+	}
+
+	[data-color-type="gazprombank-blue"] & {
+		background: $brand-gazprom-blue;
+	}
+
+	@include mq-custom(max, 920px) {
+		position: relative;
+		//position: sticky;
+		top: -1px; // border-width
+	}
+
+	&:not(:first-child) {
+		@include mq(md) {
+			margin-top: map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+
+	&:not(:last-child) {
+
+		&:not(.main-breadcrumbs--no-margin-bottom) {
+			margin-bottom: map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+	
+	[data-background="clinging-pearl"] &,
+	[data-background="promo"] &,
+	[data-background="gradient-dark"] &,
+	[data-background="gradient-medium-dark"] &,
+	.loyalty-program-header &,
+	.loyalty-program &,
+	.loyalty-program-container & {
+		background: transparent;
+	}
+	
+	[data-background="new-loyalty-program"] &,
+	[data-background="promo"] &,
+	[data-background="gradient-dark"] &,
+	[data-background="gradient-medium-dark"] &,
+	.loyalty-program-header &,
+	.loyalty-program &,
+	.loyalty-program-container {
+
+		&:not(:first-child) {
+			@include mq(md) {
+				margin-top: 0;
+			}
+		}
+
+		&:not(.is-open) {
+			.main-breadcrumbs__root-list-main {
+				border-top-color: rgba(#fff, .1);
+				border-bottom-color: rgba(#fff, .1);
+				
+				[data-background="porcelain"] & {
+					border-top-color: #D9DADB;
+					border-bottom-color: #D9DADB;
+				}
+			}
+
+			.main-breadcrumbs__back-link,
+			.main-breadcrumbs__state-indicator {
+				color: #fff;
+
+				.icon {
+					fill: #fff;
+				}
+			}
+
+			.main-breadcrumbs__list-item {
+				&::after {
+					color: #fff;
+				}
+
+				> a,
+				> button,
+				> span {
+					@include mq-custom(min, 921px) {
+						color: #fff;
+					}
+
+					&.is-current {
+						color: rgba(#fff, .5);
+					}
+				}
+
+				&.main-breadcrumbs__list-item--dotted {
+					> button {
+						> span {
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+
+		&.main-breadcrumbs--color-base {
+			.main-breadcrumbs__root-list-main {
+				border-top-color: $color-lightest-popup;
+				border-bottom-color: $color-lightest-popup;
+			}
+
+			.main-breadcrumbs__back-link,
+			.main-breadcrumbs__state-indicator {
+				color: $color-base;
+
+				.icon {
+					fill: $color-base;
+				}
+			}
+
+			.main-breadcrumbs__list-item {
+				&::after {
+					color: $color-base;
+				}
+
+				a,
+				button,
+				span {
+					@include mq-custom(min, 921px) {
+						color: $color-base;
+					}
+
+					&.is-current {
+						color: rgba(26, 26, 26, 0.5);
+					}
+				}
+
+				&.main-breadcrumbs__list-item--dotted {
+					> button {
+						> span {
+							background: $color-base;
+						}
+					}
+				}
+			}
+		}
+
+		&.main-breadcrumbs--offer {
+			.main-breadcrumbs__root-list {
+				@include mq-custom(max, 920px) {
+					margin: {
+						top: -1 * map_get($mq-container-indents, "sm");
+						right: -1 * map_get($mq-container-indents, "sm");
+						left: -1 * map_get($mq-container-indents, "sm");
+					};
+				}
+
+				@include mq(sx) {
+					margin-top: -1 * map_get($mq-container-indents, "sx") / 2;
+
+					@include mq-custom(min, 921px) {
+						margin: {
+							top: 0;
+							right: 0;
+							left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	[data-color-type="vtb"] &,
+	[data-color-type="gazprombank-blue"] & {
+		&:not(.main-breadcrumbs--offer) {
+			@include mq(md) {
+				margin-top: map_get($mq-container-indents, 'sx') / 2 !important;
+			}
+		}
+	}
+
+	.loyalty-program & {
+		color: $color-base;
+
+		@include mq(sm) {
+			margin-top: -1 * map_get($mq-container-indents, 'sm') - 1px;
+		}
+
+		@include mq(sx) {
+			@include mq-custom(max, 919px) {
+				margin-top: -1 * map_get($mq-container-indents, 'sx') / 2 - 1px;
+			}
+		}
+	}
+
+	&.is-open {
+		.main-breadcrumbs__back-link {
+			background: #fff;
+
+			&::before {
+				background: #fff;
+			}
+		}
+
+		.main-breadcrumbs__root-list-container {
+			overflow: visible;
+		}
+
+		.main-breadcrumbs__list {
+			transform: translateY(0);
+		}
+	}
+
+	&__root-list-container {
+		position: relative;
+		z-index: 10;
+
+		@include mq-custom(max, 921px) {
+			//overflow: hidden;
+		}
+
+		.main-breadcrumbs.is-ellipsis & {
+			max-width: 100%;
+		}
+	}
+
+	&__root-list,
+	&__list {
+
+		@include mq-custom(min, 921px) {
+			display: flex;
+		}
+
+		.main-breadcrumbs.is-ellipsis & {
+			max-width: 100%;
+		}
+	}
+
+	&__root-list {
+		@include mq-custom(max, 920px) {
+			margin: 0 -1 * map_get($mq-container-indents, "sm");
+
+			@include mq(sx) {
+				margin: 0 -1 * map_get($mq-container-indents, "sx");
+			}
+
+		}
+	}
+
+	&__list {
+		z-index: 10;
+		transition: transform $transition-duration-base-min;
+
+		@include mq-custom(max, 920px) {
+			position: absolute;
+			top: calc(100% - 1px); // 1px border-width
+			right: 0;
+			left: 0;
+			transform: translateY(calc(-100% - 44px));
+			display: flex;
+			flex-direction: column-reverse;
+			background: #fff;
+			transition-delay: 0s;
+
+			.is-open & {
+				transition-delay: 0.2s;
+			}
+		}
+	}
+
+	&__root-list-main,
+	&__list-item {
+		display: flex;
+		white-space: nowrap;
+
+		@include mq-custom(max, 920px) {
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+			border-color: transparent;
+			border-top-color: $color-lightest-border;
+		}
+		
+		[data-background="porcelain"] & {
+			border-top-color: #D9DADB;
+		}
+
+		&:first-child {
+			border-bottom-color: $color-lightest-border;
+			
+			[data-background="porcelain"] & {
+				border-bottom-color: #D9DADB;
+			}
+		}
+
+		&:not(:last-child) {
+
+			&::after {
+				@include mq(md) {
+					@include font(1.6rem, 2rem);
+
+					content: "/";
+				}
+			}
+
+			&::after {
+				@include mq(md) {
+					margin: 0 map_get($mq-container-indents, "sx") / 4;
+				}
+			}
+		}
+
+		.main-breadcrumbs.is-ellipsis & {
+			max-width: 100%;
+		}
+
+		> a,
+		> button,
+		> span {
+			@include interact(text-decoration, underline);
+
+			font-weight: 500;
+
+			&:not(.main-breadcrumbs__state-indicator) {
+				@include mq-custom(max, 920px) {
+					display: block;
+					padding: 11px map_get($mq-container-indents, "sx") / 2;
+				}
+			}
+
+			&:not([class]) {
+				@include ellipsis(100%, block);
+
+				width: 100%;
+			}
+
+			&.main-breadcrumbs__back-link {
+				@include mq-custom(max, 920px) {
+					padding-right: 5.2rem;
+				}
+			}
+
+
+			&.is-current {
+				pointer-events: none;
+				color: rgba(26, 26, 26, 0.5);
+
+				.main-breadcrumbs.is-ellipsis & {
+					@include ellipsis(calc(100% - 64px), block); // 64px magic number
+				}
+			}
+		}
+	}
+
+	&__list-item {
+
+		&:last-child {
+			@include mq-custom(max, "920px") {
+				display: none !important; // current hide(mobile)
+			}
+		}
+
+		&:last-child {
+			@include mq-custom(max, "920px") {
+				display: none !important; // current hide(mobile)
+			}
+		}
+
+		&.main-breadcrumbs__list-item--dotted {
+
+			> button.tooltip-link {
+				@include size(2rem);
+				@include interact(background, $brand-turquoise, 'hover span');
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 0;
+
+				&:focus {
+					outline: none;
+
+					> span {
+						background: $brand-turquoise !important;
+					}
+				}
+
+				> span {
+					@include size(.4rem);
+
+					display: block;
+					border-radius: 50%;
+					background: $color-base;
+					transition: background-color $transition-duration-base-min;
+
+					&:not(:last-child) {
+						margin-right: 4px;
+					}
+				}
+			}
+		}
+	}
+
+	&__root-list-main {
+		position: relative;
+		z-index: 11;
+
+		@include mq-custom(max, 920px) {
+			//background: #fff;
+		}
+
+		[data-background="gradient-dark"] &,
+		[data-background="gradient-medium-dark"] & {
+			@include mq-custom(max, 920px) {
+				//background: $color-light;
+			}
+		}
+
+		@include mq-custom(min, 921px) {
+			display: none;
+		}
+	}
+
+	&__back-link {
+		position: relative;
+		margin-left: -2rem; // icon width
+		max-width: calc(100% + 2rem);
+		width: calc(100% + 2rem);
+		transition: all $transition-duration-base-min;
+
+		&::before {
+			@include size(100%);
+
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			background: transparent;
+			transition: .1s;
+			transition-delay: $transition-duration-base-min;
+		}
+
+		.icon {
+			fill: $color-base;
+		}
+	}
+
+	&__back-arrow {
+
+		&.icon {
+			@include size(2rem);
+
+			transform: rotate(180deg);
+		}
+	}
+
+	&__state-indicator {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 5.6rem;
+		outline: none;
+
+		&:focus {
+			.icon {
+				fill: $brand-turquoise;
+			}
+		}
+
+		.icon {
+			@include size(2rem);
+
+			position: absolute;
+			top: 50%;
+			right: 1.6rem;
+			transform: translateY(-50%);
+			transition: fill $transition-duration-base-min, transform $transition-duration-base-min;
+
+			.is-open & {
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+	}
+}
