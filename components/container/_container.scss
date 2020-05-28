@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.container {
+    @include container;
+
+    &--narrow {
+        @include mq(md){
+            max-width: 97.6rem;
+        }
+    }
+}
