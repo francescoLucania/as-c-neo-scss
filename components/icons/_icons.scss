@@ -7,6 +7,14 @@
 		fill-rule: evenodd;
 		transition: all $transition-duration-base-min;
 
+		&--no-border {
+			border: none;
+		}
+
+		&--inline-flex {
+			display: inline-flex;
+		}
+
 		&.icon--12 {
 			@include size(1.2rem);
 		}
