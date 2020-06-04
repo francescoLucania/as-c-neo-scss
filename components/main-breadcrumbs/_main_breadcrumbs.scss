@@ -213,9 +213,12 @@
 		}
 
 		&.main-breadcrumbs--offer-sm {
-			margin-right: map_get($mq-container-indents, "sm");
-			margin-left: map_get($mq-container-indents, "sm");
 			margin-bottom: -2px !important;
+
+			@include mq(sx) {
+				margin-right: map_get($mq-container-indents, "sx") / 2;
+				margin-left: map_get($mq-container-indents, "sx") / 2;
+			}
 		}
 	}
 
