@@ -7,14 +7,6 @@
 		fill-rule: evenodd;
 		transition: all $transition-duration-base-min;
 
-		&--no-border {
-			border: none;
-		}
-
-		&--inline-flex {
-			display: inline-flex;
-		}
-
 		&.icon--12 {
 			@include size(1.2rem);
 		}
@@ -103,6 +95,14 @@
 		@include size(.25rem, 1rem);
 
 		fill: $color-placeholder;
+	}
+
+	&--no-border {
+		border: none;
+	}
+
+	&--inline-flex {
+		display: inline-flex;
 	}
 }
 
