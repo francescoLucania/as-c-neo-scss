@@ -41,7 +41,7 @@
 @mixin as-c-header-h4($font-weight: 700) {
 	@include h;
 
-	@include font(1.6rem, 20rem);
+	@include font(1.6rem, 2rem);
 
 	font-weight: $font-weight;
 
@@ -116,6 +116,26 @@
 	}
 }
 
+@mixin text-base-big($font-weight: $font-weight-text) {
+	@include font(1.8rem, 2.4rem);
+
+	font-weight: $font-weight;
+
+	> a {
+		font-weight: 700;
+	}
+}
+
+@mixin text-base-medium($font-weight: $font-weight-text) {
+	@include font(1.6rem, 2rem);
+
+	font-weight: $font-weight;
+
+	> a {
+		font-weight: 500;
+	}
+}
+
 @mixin text-base($font-weight: $font-weight-text) {
 	font-size: 1.4rem;
 	line-height: 2rem;
@@ -175,6 +195,11 @@
 
 .text-base-big {
 	@include text-base-big;
+}
+
+
+.text-base-medium {
+	@include text-base-medium;
 }
 
 
