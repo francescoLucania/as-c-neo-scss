@@ -31,9 +31,9 @@
 		background: $brand-vtb-blue;
 	}
 
-	[data-color-type="gazprombank-blue"] & {
-		background: $brand-gazprom-blue;
-	}
+	//[data-color-type="gazprombank-blue"] & {
+	//	background: $brand-gazprom-blue;
+	//}
 
 	@include mq-custom(max, 920px) {
 		position: relative;
