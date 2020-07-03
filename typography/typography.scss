@@ -232,17 +232,6 @@
 	}
 }
 
-@mixin as-c-header-h4($font-weight: 700) {
-	@include h;
-	@include font(1.8rem, 2.4rem);
-
-	font-weight: $font-weight;
-
-	@include mq(lg) {
-		@include font(2.1rem, 2.4rem);
-	}
-}
-
 @mixin header-h1-black($font-weight: 900) {
 	@include h;
 	@include font(2.1rem, 3.2rem);
