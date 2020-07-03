@@ -840,7 +840,7 @@
 	&[data-brand-name="GAC"] {
 
 		&::before {
-			background-image: url("../img/brand-logos/GAC.png");
+			background-image: url("../img/brand-logos/gac.png");
 		}
 	}
 
@@ -1086,6 +1086,13 @@
 
 		&::before {
 			background-image: url("../img/brand-logos/ZX.png");
+		}
+	}
+
+	&[data-brand-name="GAC MOTOR"] {
+
+		&::before {
+			background-image: url("../img/brand-logos/gac.png");
 		}
 	}
 
