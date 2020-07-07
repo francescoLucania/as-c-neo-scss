@@ -37,6 +37,43 @@ $mq-container-indents: (
     "xl": 64px
 );
 
+@if $enable-new-mq-rules == true {
+    $mq-breakpoints: (
+            "sm": 767px,
+            "sx": 768px,
+            "sm-md": 768px,
+            "md": 921px,
+            "lg": 1196px,
+            "xl": 1440px
+    );
+
+    $mq-indents: (
+            "sm": 24px,
+            "sx": 32px,
+            "sm-md": 32px,
+            "md": 32px,
+            "lg": 32px
+    );
+
+    $mq-container-widths: (
+            "sm": 100%,
+            "sx": 100%,
+            "sm-md": 100%,
+            "md": 100%,
+            "lg": 100%,
+            "xl": 156.8rem,
+    );
+
+    $mq-container-indents: (
+            "sm": 16px,
+            "sx": 64px,
+            "sm-md": 64px,
+            "md": 64px,
+            "lg": 64px,
+            "xl": 64px
+    );
+}
+
 $mq-grid-gutters: (
     "sm": map-get($mq-indents, "sm"),
     "sx": map-get($mq-indents, "sm"),
@@ -59,6 +96,7 @@ $grid-gutter: $indent;
 $border-radius-min: 2px;
 $border-radius-base: 6px;
 $border-radius-xl: 16px;
+$border-radius-max: 16px;
 
 // Colors
 $color-base: #1A1A1A;
@@ -106,6 +144,8 @@ $brand-duck-egg-blue: #bcf2eb;
 $brand-bluish: #2898bc;
 
 $color-amber: #ffbb03;
+
+$color-clinging-pearl: #e5e5e5;
 
 // support colors
 $color-error: $brand-grapefruit;
