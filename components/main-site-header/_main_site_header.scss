@@ -173,6 +173,7 @@
 
 	&__mobile-container {
 		margin-bottom: map_get($mq-container-indents, "sx") / 4;
+		min-height: 4.5rem; // чтобы не прыгал контент при загрузке
 
 		@include mq(sx) {
 			display: none;
