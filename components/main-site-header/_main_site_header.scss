@@ -74,6 +74,71 @@
 		}
 	}
 
+	//rusfinancebank only desktop
+	[data-color-type="rfb"] & {
+		@include mq(sx){
+			background: $brand-rfb-red;
+		}
+
+		.main-site-header__menu-item a,
+		.main-site-header__menu-item button {
+			@include mq(sx){
+				@include interact(fill, $brand-turquoise, 'hover .icon');
+
+				color: #fff;
+			}
+		}
+
+		.main-site-header__menu-item a .icon[data-compare],
+		.main-site-header__menu-item a .icon[data-compare],
+		.main-site-header__menu-item button .icon[data-compare],
+		.main-site-header__menu-item a .icon[data-compare],
+		.main-site-header__menu-item button[data-type="open-popup"] .icon,
+		.main-site-header__menu-item a .icon[data-phone],
+		.main-site-header__menu-item button .icon[data-phone],
+		.main-site-header__menu-item a .icon[data-region],
+		.main-site-header__menu-item button .icon[data-region],
+		.main-site-header__menu-item a .icon[data-search],
+		.main-site-header__menu-item button .icon[data-search],
+		.main-site-header__burger-button .icon {
+			@include mq(sx){
+				fill: #fff;
+				transition: fill $transition-duration-base-min !important;
+			}
+		}
+
+		.main-site-header__menu-item a {
+			@include mq(sx) {
+				@include interact(color, #ffffff, "hover .number");
+			}
+
+			&[data-compare] .number {
+				@include mq(sx){
+					color: $color-base;
+				}
+			}
+		}
+
+		.main-site-header__menu-item a.tooltip-link::after,
+		.main-site-header__menu-item a.popup-tooltip-button::after,
+		.main-site-header__menu-item button.tooltip-link::after,
+		.main-site-header__menu-item button.popup-tooltip-button::after {
+			@include mq(sx) {
+				border-top-color: #fff;
+				transition: all $transition-duration-base-min !important;
+			}
+
+			.mod_no-touchevents & {
+
+				&::before {
+					@include mq(sx){
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
 	[data-background="gradient-dark"] &,
 	[data-background="gradient-medium-dark"] & {
 		@include mq-custom(max, 919px) {
@@ -169,6 +234,12 @@
 			padding-top: map_get($mq-container-indents, "sx") / 2;
 			padding-bottom: calc(#{map_get($mq-container-indents, "sx") / 2} - 1px); // border-bottom: 1px
 		}
+
+		&--top {
+			[data-color-type="rfb"] & {
+				background: $brand-rfb-red;
+			}
+		}
 	}
 
 	&__mobile-container {
@@ -223,19 +294,41 @@
 		}
 
 		[data-color-type="vtb"] &,
-		[data-color-type="gazprombank-blue"] & {
+		[data-color-type="gazprombank-blue"] &,
+		[data-color-type="rfb"] & {
 			display: flex;
 			align-items: center;
 		}
 
+		[data-color-type="rfb"] .loyalty-program-header &,
+		[data-color-type="rfb"]:not([data-background]) & {
+			> img {
+				@include mq(sx) {
+					transform: translateY(-.1rem);
+				}
+
+				&[data-color="white-whole"] {
+					@include mq(sx){
+						display: block;
+					}
+				}
+				&[data-color="white"],
+				&[data-color="black"] {
+					@include mq(sx){
+						display: none;
+					}
+				}
+			}
+		}
+
 		> img {
-			//transform: translateY(0rem);
 			display: block;
 			width: 100%;
 			height: auto;
 			vertical-align: top;
 
-			&[data-color="white"] {
+			&[data-color="white"],
+			&[data-color="white-whole"] {
 				display: none;
 			}
 
@@ -274,9 +367,9 @@
 		}
 
 		[data-color-type="gazprombank-blue"] & {
-            margin-bottom: .4rem;
+			margin-bottom: .4rem;
 
-            &::before {
+			&::before {
 				width: 6rem;
 				height: 3.2rem;
 				background-image: url(../img/bank-logo/+gazprombank.svg);
@@ -287,6 +380,40 @@
 					background-image: url(../img/bank-logo/++gazprombank.svg);
 				}
 			}
+		}
+
+		[data-color-type="rfb"] & {
+			margin-bottom: .4rem;
+
+			&::before {
+				@include mq(sx) {
+					width: 21.8rem;
+					height: 3.2rem;
+					background-image: url(../img/bank-logo/rusfinancebank.svg);
+				}
+			}
+		}
+
+		[data-color-type="rfb"] .main-site-header__top & {
+			margin-left: map_get($mq-container-indents, "sx") / 8;
+
+			&::before {
+				@include mq(sm) {
+					width: 14.3rem;
+					height: 2.4rem;
+					background-image: url(../img/bank-logo/rusfinancebank-mob.svg);
+				}
+			}
+		}
+	}
+
+	&__top {
+		justify-content: center;
+		display: flex;
+		align-items: center;
+
+		[data-color-type="rfb"] & {
+			color: #ffffff;
 		}
 	}
 
@@ -318,7 +445,8 @@
 		}
 
 		[data-color-type="vtb"] &,
-		[data-color-type="gazprombank-blue"] & {
+		[data-color-type="gazprombank-blue"] &,
+		[data-color-type="rfb"] & {
 			&:not(.main-site-header__menu-item--all-breakpoints) {
 				@include mq(sx) {
 					@include mq-custom(max, 1280px) {
