@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.as-c-input-box-select-group {
+	padding: 9px 0 10px;
+	border-top: 1px solid $color-n-lightest;
+
+	&__option {
+		@include interact(background-color, $color-lightest-porcelain);
+
+		position: relative;
+		transition: background-color $transition-duration-base-min;
+	}
+
+	&__option-input {
+		@include size(100%);
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 2;
+		cursor: pointer;
+
+		&:checked {
+
+			+ .as-c-input-box-select-group__option-content {
+
+				.as-c-input-box-select-group__option-content-icon {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__option-content {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: flex-start;
+		padding: 6px map_get($mq-container-indents, "sm");
+	}
+
+	&__option-content-label {
+		@include ellipsis(#{calc(100% - 28px)}, block); // .icon width & margin
+	}
+
+	&__option-content-icon {
+		margin-left: map_get($mq-container-indents, "sm") / 2;
+		opacity: 0;
+		transition: opacity $transition-duration-base-min;
+
+		.icon {
+			@include size(2rem);
+		}
+	}
+}

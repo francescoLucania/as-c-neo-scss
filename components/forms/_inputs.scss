@@ -1,0 +1,357 @@
+@charset "UTF-8";
+
+@if $enable-inputs == true {
+
+	.as-n-c-input-box {
+
+		&--magnifier-icon,
+		&--select-type,
+		&--pencil-icon {
+
+			.as-n-c-input-box__tag-container {
+				position: relative;
+			}
+
+			.icon {
+				@include size(2rem);
+
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 1;
+			}
+		}
+
+		&--disable {
+			cursor: no-drop;
+
+			.as-n-c-input-box__tag-container {
+				pointer-events: none;
+
+				input,
+				button {
+					color: $color-lightest;
+				}
+
+				input {
+					&::placeholder {
+						color: $color-lightest;
+					}
+				}
+			}
+
+			.icon {
+				fill: $color-lightest;
+			}
+		}
+
+		&--label-type {
+			position: relative;
+
+			&.as-n-c-input-box--magnifier-icon {
+
+				.as-n-c-input-box__fake-label {
+					left: 52px;
+				}
+			}
+
+			.as-n-c-input-box__fake-select-value,
+			.as-n-c-input-box__tag-container > input {
+				padding: 30px map_get($mq-container-indents, "sm") 10px;
+				min-height: 6.3rem;
+
+				.ng-invalid.is-error & {
+
+					&.ng-invalid {
+
+						&::placeholder {
+							color: $color-error;
+						}
+
+						+ .as-n-c-input-box__fake-label {
+							color: $color-error;
+						}
+					}
+				}
+
+				.is-invalid.is-error & {
+					&::placeholder {
+						color: $color-error;
+					}
+
+					+ .as-n-c-input-box__fake-label {
+						color: $color-error;
+					}
+				}
+			}
+		}
+
+		&--color-type {
+			&.as-n-c-input-box--label-type {
+				.as-n-c-input-box__fake-select-value {
+					display: inline-flex;
+
+					> span {
+						&:nth-child(6) {
+							border-color: transparent !important;
+							background: transparent !important;
+
+							&:after {
+								@include text-base(400);
+
+								content: '...';
+							}
+						}
+
+						&:nth-child(n+7) {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+		&--magnifier-icon {
+
+			.as-n-c-input-box__tag-container > input,
+			.as-n-c-input-box__fake-select-value {
+				padding-left: 52px; // padding + icon width + margin
+			}
+
+			.as-n-c-input-box__tag-container > input {
+
+				&:focus {
+					box-shadow: none;
+				}
+			}
+
+			.icon {
+				left: map_get($mq-container-indents, "sm");
+			}
+		}
+
+		&--select-type {
+
+			&.is-active {
+				.icon {
+					&.js-as-c-popover-reference-point,
+					&.js-fixed-tooltip-point {
+						transform: translateY(-50%) rotate(180deg);
+					}
+				}
+			}
+
+			.as-n-c-input-box__fake-select-value {
+				padding-right: 42px; // padding + icon width + margin
+			}
+
+			.icon {
+				right: map_get($mq-container-indents, "sm");
+				transition: transform $transition-duration-base-min;
+			}
+		}
+
+		&--pencil-icon {
+
+			.as-n-c-input-box__fake-label {
+				left: 52px; // padding + icon width + margin
+				max-width: calc(100% - 52px);
+			}
+
+			.as-n-c-input-box__tag-container {
+				position: relative;
+
+				.icon {
+					left: map_get($mq-container-indents, "sm");
+				}
+
+				> input {
+					padding-left: 52px; // padding + icon width + margin
+				}
+			}
+		}
+
+		&__tag-container {
+			display: block;
+
+			&:not(.as-n-c-input-box__tag-container--not-hover) {
+				&:hover {
+					> input,
+					.as-n-c-input-box__fake-select-value {
+						.mod_no-touchevents & {
+							box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+						}
+					}
+				}
+			}
+
+			&.as-n-c-input-box__tag-container--not-hover {
+				> input {
+					box-shadow: none !important;
+				}
+			}
+
+			> input {
+
+				&::placeholder {
+					font-weight: 400;
+					color: $color-lighter;
+				}
+
+				&[type="phone"] {
+
+					&::placeholder {
+						color: $color-base;
+					}
+				}
+
+				.ng-invalid.is-error & {
+					//color: $color-error;
+
+					&.ng-invalid, {
+
+						&::placeholder {
+							color: $color-error;
+						}
+
+						+ .as-n-c-input-box__fake-label {
+							color: $color-error;
+						}
+					}
+				}
+
+				.is-invalid.is-error & {
+
+					&::placeholder {
+						color: $color-error;
+					}
+
+					+ .as-n-c-input-box__fake-label {
+						color: $color-error;
+					}
+				}
+			}
+		}
+
+		&__tag-container > input,
+		&__fake-select-value {
+			@include text-base-big(500);
+
+			position: relative;
+			z-index: 10;
+			display: block;
+			padding: 20px map_get($mq-container-indents, "sm") 20px;
+			width: 100%;
+			text-align: left;
+			color: $color-base;
+			transition: box-shadow $transition-duration-base-min;
+
+			.as-n-c-input-box--reference-button-mod,
+			.as-n-c-input-box--clear-button-mod & {
+				padding-right: 52px !important;
+			}
+
+			&:hover {
+
+				.mod_no-touchevents & {
+					box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+				}
+			}
+
+			&:focus {
+				outline: none;
+				box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+
+				.as-n-c-input-box__tag-container--not-hover & {
+					box-shadow: none !important;
+				}
+			}
+			
+			span {
+				pointer-events: none;
+
+				&:not(:last-child) {
+					&::after {
+						content: ", "
+					}
+
+					&[data-content-type="color"] {
+						margin-right: map_get($mq-container-indents, "sm") / 2;
+					}
+				}
+
+				&[data-content-type="color"] {
+					@include size(2rem);
+					@include font(0,0);
+
+					display: inline-block;
+					border-radius: 50%;
+					border: 1px solid;
+				}
+			}
+		}
+
+		&__fake-label {
+			@include text-base(500);
+			@include ellipsis(calc(100% - #{map_get($mq-container-indents, "sx") / 2}), block);
+
+			content: attr(data-label);
+			position: absolute;
+			top: map_get($mq-container-indents, "sm") / 2;
+			left: map_get($mq-container-indents, "sm");
+			margin-bottom: 2px;
+			color: $color-gray;
+		}
+
+		&__fake-select-value {
+			@include ellipsis(100%);
+		}
+
+		&__reference-button,
+		&__clear-button {
+			@include size(2rem);
+			@include interact(background-color, $color-gray);
+
+			position: absolute;
+			top: 50%;
+			right: map_get($mq-container-indents, "sm");
+			transform: translateY(-50%);
+			z-index: 100;
+			border-radius: 50% !important; // override ordinal styles
+			background-color: $color-lightest;
+			transition: background-color $transition-duration-base-min;
+
+			&:focus {
+				background-color: $color-gray;
+				outline: none;
+			}
+
+			&::before,
+			> .icon {
+				position: absolute !important; // !important not to write an exception in several places
+				top: 50% !important; // !important not to write an exception in several places
+				left: 50% !important; // !important not to write an exception in several places
+				transform: translate(-50%, -50%) !important; // !important not to write an exception in several places
+			}
+		}
+
+		&__clear-button {
+
+			> .icon {
+				@include size(1rem);
+
+				fill: #fff !important; // !important not to write an exception in several places
+			}
+		}
+
+		&__reference-button {
+			@include interact(fill, #fff, "hover .icon");
+
+			> .icon {
+				@include size(2rem);
+
+				fill: $color-base;
+			}
+		}
+	}
+}
