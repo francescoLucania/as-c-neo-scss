@@ -4,49 +4,13 @@
 
 	.as-n-c-input-box {
 
-		&--magnifier-icon,
-		&--select-type,
-		&--pencil-icon {
-
-			.as-n-c-input-box__tag-container {
-				position: relative;
-			}
-
-			.icon {
-				@include size(2rem);
-
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				z-index: 1;
-			}
-		}
-
-		&--disable {
-			cursor: no-drop;
-
-			.as-n-c-input-box__tag-container {
-				pointer-events: none;
-
-				input,
-				button {
-					color: $color-lightest;
-				}
-
-				input {
-					&::placeholder {
-						color: $color-lightest;
-					}
-				}
-			}
-
-			.icon {
-				fill: $color-lightest;
-			}
+		&--label-type,
+		&--input-radio,
+		&--input-checkbox {
+			position: relative;
 		}
 
 		&--label-type {
-			position: relative;
 
 			&.as-n-c-input-box--magnifier-icon {
 
@@ -58,7 +22,6 @@
 			.as-n-c-input-box__fake-select-value,
 			.as-n-c-input-box__tag-container > input {
 				padding: 30px map_get($mq-container-indents, "sm") 10px;
-				min-height: 6.3rem;
 
 				.ng-invalid.is-error & {
 
@@ -171,8 +134,87 @@
 			}
 		}
 
+		&__radio-and-checkbox-input {
+			@include size(100%);
+
+			position: absolute !important;
+			top: 0 !important;
+			right: 0 !important;
+			z-index: 99 !important;
+			opacity: 0 !important;
+			cursor: pointer;
+
+			&:checked {
+
+				+ .as-n-c-input-box__radio-and-checkbox-icon-container .as-n-c-input-box__radio-icon {
+					border-color: $brand-turquoise;
+					background: $brand-turquoise;
+
+					&::after {
+						opacity: 1;
+					}
+				}
+
+				.mod_no-touchevents & {
+
+					&:hover {
+
+						+ .as-n-c-input-box__radio-and-checkbox-icon-container .as-n-c-input-box__radio-icon {
+							border-color: $brand-green-pea !important;
+							background: $brand-green-pea !important;
+						}
+					}
+				}
+			}
+
+			.mod_no-touchevents & {
+
+				&:hover {
+					+ .as-n-c-input-box__radio-and-checkbox-icon-container .as-n-c-input-box__radio-icon {
+						border-color: $color-base;
+					}
+				}
+			}
+		}
+
+		&__radio-and-checkbox-icon-container {
+			@include size(2rem);
+
+			position: absolute;
+			top: 50%;
+			right: map_get($mq-container-indents, "sm");
+			transform: translateY(-50%);
+			z-index: 1;
+		}
+
+		&__radio-icon {
+			@include size(100%);
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-radius: 50%;
+			border: 1px solid $color-gray;
+			transition: background $transition-duration-base-min, border-color $transition-duration-base-min;
+
+			&::after {
+				@include size(.8rem);
+
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+				background: #fff;
+				opacity: 0;
+				transition: opacity $transition-duration-base-min;
+			}
+		}
+
 		&__tag-container {
 			display: block;
+			min-height: map_get($mq-container-indents, "sx") / 2;
 
 			&:not(.as-n-c-input-box__tag-container--not-hover) {
 				&:hover {
@@ -304,7 +346,7 @@
 		}
 
 		&__fake-select-value {
-			@include ellipsis(100%);
+			@include ellipsis(100%, block);
 		}
 
 		&__reference-button,
