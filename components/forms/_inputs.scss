@@ -4,10 +4,22 @@
 
 	.as-n-c-input-box {
 
-		&--label-type,
-		&--input-radio,
-		&--input-checkbox {
-			position: relative;
+		&--magnifier-icon,
+		&--select-type,
+		&--pencil-icon {
+
+			.as-n-c-input-box__tag-container {
+				position: relative;
+			}
+
+			.icon {
+				@include size(2rem);
+
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 1;
+			}
 		}
 
 		&--label-type {
@@ -308,7 +320,7 @@
 					box-shadow: none !important;
 				}
 			}
-			
+
 			span {
 				pointer-events: none;
 

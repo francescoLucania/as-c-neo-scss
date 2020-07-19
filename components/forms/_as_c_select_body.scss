@@ -26,6 +26,10 @@
 		}
 	}
 
+	&--mq-sm-fixed-footer {
+		margin-bottom: 63px;
+	}
+
 	&__input {
 		display: block;
 
@@ -58,11 +62,11 @@
 		@include scroll-not-scrollbar(hidden, auto);
 
 		max-height: 500px;
-		
+
 		@include mq(sm) {
 			max-height: calc(100vh - #{map_get($mq-container-indents, "sx")} - 65px);
 		}
-		
+
 		@include mq(sx) {
 			padding: map_get($mq-container-indents, "sm") / 2 - 1px 0 map_get($mq-container-indents, "sm") / 2;
 		}
@@ -233,7 +237,7 @@
 			}
 		}
 	}
-	
+
 	&__item-header,
 	&__item-description {
 		//@include ellipsis(100%, block);
