@@ -839,8 +839,7 @@
 
 	&[data-brand-name="GAC"],
 	&[data-brand-name="GAC MOTOR"] {
-
-		&::before {
+		&:before {
 			background-image: url("../img/n-brand-logo/gac.png");
 		}
 	}
