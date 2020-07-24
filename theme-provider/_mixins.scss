@@ -837,12 +837,13 @@
 		}
 	}
 
-	//&[data-brand-name="GAC"] {
-	//
-	//	&::before {
-	//		background-image: url("../img/brand-logos/gac.png");
-	//	}
-	//}
+	&[data-brand-name="GAC"],
+	&[data-brand-name="GAC MOTOR"] {
+
+		&::before {
+			background-image: url("../img/n-brand-logo/gac.png");
+		}
+	}
 
 	&[data-brand-name="ГАЗ"] {
 
@@ -1088,12 +1089,4 @@
 			background-image: url("../img/brand-logos/ZX.png");
 		}
 	}
-
-	&[data-brand-name="GAC MOTOR"] {
-
-		//&::before {
-		//	background-image: url("../img/brand-logos/gac.png");
-		//}
-	}
-
 }
