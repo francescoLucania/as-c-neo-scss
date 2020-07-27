@@ -4,13 +4,10 @@
 
 	.as-n-c-input-box {
 
+
 		&--magnifier-icon,
 		&--select-type,
 		&--pencil-icon {
-
-			.as-n-c-input-box__tag-container {
-				position: relative;
-			}
 
 			.icon {
 				@include size(2rem);
@@ -225,6 +222,7 @@
 		}
 
 		&__tag-container {
+			position: relative;
 			display: block;
 			min-height: map_get($mq-container-indents, "sx") / 2;
 
