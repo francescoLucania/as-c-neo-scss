@@ -372,12 +372,12 @@
 			&::before {
 				width: 6rem;
 				height: 3.2rem;
-				background-image: url(../img/bank-logo/+gazprombank.svg);
+				background-image: url(../../../node_modules/as-c-neo-scss/img/bank-logo/+gazprombank.svg);
 
 				@include mq(sx) {
 					width: 17rem;
 					height: 3.2rem;
-					background-image: url(../img/bank-logo/++gazprombank.svg);
+					background-image: url(../../../node_modules/as-c-neo-scss/img/bank-logo/++gazprombank.svg);
 				}
 			}
 		}
@@ -389,7 +389,7 @@
 				@include mq(sx) {
 					width: 21.8rem;
 					height: 3.2rem;
-					background-image: url(../img/bank-logo/rusfinancebank.svg);
+					background-image: url(../../../node_modules/as-c-neo-scss/img/bank-logo/rusfinancebank.svg);
 				}
 			}
 		}
@@ -401,7 +401,7 @@
 				@include mq(sm) {
 					width: 14.3rem;
 					height: 2.4rem;
-					background-image: url(../img/bank-logo/rusfinancebank-mob.svg);
+					background-image: url(../../../node_modules/as-c-neo-scss/img/bank-logo/rusfinancebank-mob.svg);
 				}
 			}
 		}
