@@ -227,7 +227,8 @@
 	[data-color-type="rfb"] &,
 	[data-color-type="vtb"] &,
 	[data-color-type="gazprombank-blue"] & {
-		&:not(.main-breadcrumbs--offer) {
+		&:not(.main-breadcrumbs--offer),
+		&:not([data-background="gradient-dark"]){
 			@include mq(md) {
 				margin-top: map_get($mq-container-indents, 'sx') / 2 !important;
 			}
