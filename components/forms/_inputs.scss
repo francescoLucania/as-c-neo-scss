@@ -4,6 +4,28 @@
 
 	.as-n-c-input-box {
 
+		&--disable {
+			cursor: no-drop;
+
+			.as-n-c-input-box__tag-container {
+				pointer-events: none;
+
+				input,
+				button {
+					color: $color-lightest;
+				}
+
+				input {
+					&::placeholder {
+						color: $color-lightest;
+					}
+				}
+			}
+
+			.icon {
+				fill: $color-lightest;
+			}
+		}
 
 		&--magnifier-icon,
 		&--select-type,
@@ -18,7 +40,6 @@
 				z-index: 1;
 			}
 		}
-
 		&--label-type {
 
 			&.as-n-c-input-box--magnifier-icon {
