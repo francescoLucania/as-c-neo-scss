@@ -1,6 +1,6 @@
 {
-  "name": "ng",
-  "version": "0.0.0",
+  "name": "as-c-ng",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +11,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "private": true,
   "dependencies": {
     "@angular-devkit/core": "^9.1.12",
     "@angular/animations": "~9.0.3",

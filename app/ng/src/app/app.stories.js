@@ -1,15 +1,10 @@
-export default { title: 'My Button' }
+import {CarOrderCard} from "./module/components/common/car-order-card/car-order-card";
+
+export default { title: 'CarOrderCard' }
 
 export const withText = () => ({
-    component: Button,
+    component: CarOrderCard,
     props: {
         text: 'Hello Button',
-    },
-});
-
-export const withEmoji = () => ({
-    component: Button,
-    props: {
-        text: '😀 😎 👍 💯',
     },
 });

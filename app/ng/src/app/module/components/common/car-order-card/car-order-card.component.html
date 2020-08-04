@@ -1,0 +1,98 @@
+<article class="car-order-card">
+  <header class="car-order-card__header">
+    <h3 class="car-order-card__title" [attr.data-brand-name]="currentAuto.brand">
+      {{currentAuto.brand + ' ' +  currentAuto.model + ' ' + currentAuto.equipment}}
+    </h3>
+  </header>
+  <div *ngIf="currentAuto.tags" class="car-order-card__badge-block">
+    <div *ngIf="currentAuto.bookingBadge" class="badge-full-bg badge-full-bg--booking">{{currentAuto.bookingBadge}}</div>
+    <div class="car-order-card__badge-block-container">
+      <div *ngFor="let item of currentAuto.tags" class="blue-badge">{{item}}</div>
+    </div>
+  </div>
+
+  <div class="car-order-card__image">
+    <img [src]="currentAuto.img" [alt]="currentAuto.brand + ' ' +  currentAuto.model + ' ' + currentAuto.equipment">
+  </div>
+
+  <ul class="car-order-card__options-block">
+    <li class="car-order-card__options-block-item">{{ currentAuto.region }}</li>
+    <li class="car-order-card__options-block-item">{{ currentAuto.specifications }}</li>
+    <li class="car-order-card__options-block-item">
+      {{ currentAuto.color.name }}
+      <div class="car-order-card__options-block-item-color-icon" [ngStyle]="{borderColor: currentAuto.color.borderColor, backgroundColor: currentAuto.color.backgroundColor}"></div>
+    </li>
+    <li class="car-order-card__options-block-item car-order-card__options-block-item--justify-content-space-between">
+      <a [href]="currentAuto.allOptions.url" *ngIf="currentAuto.allOptions.count !== '0'">{{ currentAuto.allOptions.count }} опции</a>
+<!--      <span>{{currentAuto.id}}</span>-->
+      <div *ngIf="currentAuto.views" class="car-order-card__views-indicator">
+        <svg class="main-breadcrumbs__back-arrow icon" role="img">
+          <use xlink:href="assets/img/icons.svg#eye-20"></use>
+        </svg>
+        <span>{{ currentAuto.views }}</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="car-order-card__price-block">
+
+    <ng-container *ngIf="currentAuto.lowerPrice; else priceBaseTitle">
+      <div class="car-order-card__price-block-title">Сниженная цена</div>
+    </ng-container>
+
+    <ng-template #priceBaseTitle>
+      <div class="car-order-card__price-block-title">Цена</div>
+    </ng-template>
+
+    <div class="car-order-card__price-block-total">
+
+      <ng-container *ngIf="currentAuto.lowerPrice; else basePrice">
+        <div class="car-order-card__price-line car-order-card__price-line--old">
+          {{ currentAuto.price | priceFormatter}}<span class="rub">р.</span>
+        </div>
+        <div class="car-order-card__price-line car-order-card__price-line--sale">
+          {{ currentAuto.lowerPrice | priceFormatter}}<span class="rub">р.</span>
+        </div>
+      </ng-container>
+
+      <ng-template #basePrice>
+        <div class="car-order-card__price-line">
+          {{ currentAuto.price | priceFormatter }}<span class="rub">р.</span>
+        </div>
+      </ng-template>
+
+      <div *ngIf="currentAuto.localInformationMapOptions && !currentAuto.localInformation" class="car-order-card__dealer-block">
+        <div class="car-order-card__dealer-block-map">
+
+        </div>
+        <div class="car-order-card__dealer-block-content">
+          <h5 class="car-order-card__dealer-block-title">{{currentAuto.localInformationMapOptions.dealerTitle}}</h5>
+          <p>{{currentAuto.localInformationMapOptions.address}}</p>
+          <p>{{currentAuto.localInformationMapOptions.operatingMode}}</p>
+        </div>
+      </div>
+
+      <div *ngIf="currentAuto.localInformation && !currentAuto.localInformationMapOptions" class="car-order-card__list-box">
+        <ul class="as-c-icon-list as-c-icon-list--null-gutters">
+
+          <li class="as-c-icon-list__item" data-icon="true">
+            <svg class="icon icon--20 is-blue" role="img">
+              <use xlink:href="img/icons.svg#region-pin-20"></use>
+            </svg>
+            {{currentAuto.region}}
+          </li>
+
+          <li class="as-c-icon-list__item" data-icon="true">
+            <svg class="icon icon--20 is-gray" role="img">
+              <use xlink:href="img/icons.svg#star-20"></use>
+            </svg>
+            {{currentAuto.dealerTitle}}
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</article>
