@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.menu-model-navigation-item {
+	@include interact(color, $brand-turquoise);
+	@include interact(text-decoration, none);
+	@include interact(color, $brand-turquoise, "hover .menu-model-navigation-item__information");
+	@include interact(color, $brand-turquoise, "hover .menu-model-navigation-item__information > span");
+	@include interact(text-decoration, none, "hover .menu-model-navigation-item__information > span");
+	@include interact(color, $brand-turquoise, "hover .menu-model-navigation-item__information::before");
+	@include interact(filter, grayscale(0%), "hover .menu-model-navigation-item__logo::before");
+
+	[data-color-type="vtb"] & {
+		@include interact(color, $brand-vtb-blue);
+		@include interact(color, $brand-vtb-blue, "hover .menu-model-navigation-item__information");
+		@include interact(color, $brand-vtb-blue, "hover .menu-model-navigation-item__information > span");
+		@include interact(color, $brand-vtb-blue, "hover .menu-model-navigation-item__information::before");
+	}
+
+	[data-color-type="gazprombank-blue"] & {
+		@include interact(color, $brand-gazprom-blue);
+		@include interact(color, $brand-gazprom-blue, "hover .menu-model-navigation-item__information");
+		@include interact(color, $brand-gazprom-blue, "hover .menu-model-navigation-item__information > span");
+		@include interact(color, $brand-gazprom-blue, "hover .menu-model-navigation-item__information::before");
+	}
+
+	display: flex;
+	align-items: center;
+
+	&.is-current {
+		padding-right: .7rem;
+		border-radius: 2.5rem;
+		border: 1px solid $color-light;
+		pointer-events: none;
+	}
+
+	.main-breadcrumbs {
+		@include ellipsis(calc(100% + 16px), flex);
+	}
+
+	&__logo {
+		@include size(4rem);
+		@include brand-logo;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: .8rem;
+		background: {
+			size: contain;
+			position: 50% 50%;
+			repeat: no-repeat;
+		};
+
+		&::before {
+			@include size(2.4rem);
+
+			display: inline-block;
+			filter: grayscale(100%);
+			transition: filter $transition-duration-base-min;
+		}
+
+		.main-breadcrumbs & {
+			@include size(2rem);
+		}
+	}
+
+	&__information {
+		@include text-base(500);
+
+		flex-grow: 1;
+		display: flex;
+		justify-content: start;
+		align-items: flex-end;
+		color: $color-base;
+
+		&[data-sx-font-size="big"] {
+			@include mq(sx) {
+				@include header-equipment-h4;
+			}
+		}
+
+		.mod_flexboxtweener & {
+			flex: 1 0 0;
+		}
+
+		&::before {
+			content: attr(data-brand-name);
+		}
+	}
+}

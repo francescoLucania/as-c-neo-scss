@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <path id="a" d="M0 0h32v32H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="#FFF" fill-opacity="0" fill-rule="nonzero" xlink:href="#a"/>
+        <g fill-rule="nonzero" mask="url(#b)">
+            <path fill="#0C1A30" d="M6.737 13.735a5.314 5.314 0 1 0 0-10.628 5.314 5.314 0 0 0 0 10.628zm0 1.423a6.737 6.737 0 1 1 0-13.474 6.737 6.737 0 0 1 0 13.474z"/>
+            <g transform="translate(2.526 11.79)">
+                <ellipse cx="5.895" cy="10.105" fill="#2898BC" rx="5.895" ry="10.105"/>
+                <circle cx="5.895" cy="14.316" r="2.526" fill="#FFBB03"/>
+                <circle cx="5.895" cy="5.895" r="2.526" fill="#1A1A1A"/>
+            </g>
+            <path fill="#CCC" d="M23.086 11.416l8.336 8.336a1.684 1.684 0 1 1-2.382 2.382l-8.336-8.336 2.382-2.382z"/>
+            <path fill="#0C1A30" d="M20.704 1.889l2.382 2.381a5.053 5.053 0 0 1 0 7.146l-2.382 2.382a5.053 5.053 0 0 1-7.146 0l-2.382-2.382a5.053 5.053 0 0 1 0-7.146l2.382-2.381a5.053 5.053 0 0 1 7.146 0zm-3.275 1.488a1.263 1.263 0 0 0-1.787 0l-2.977 2.977a1.263 1.263 0 1 0 1.787 1.787l2.977-2.977a1.263 1.263 0 0 0 0-1.787z"/>
+        </g>
+    </g>
+</svg>

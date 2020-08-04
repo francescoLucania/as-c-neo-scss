@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+.personal-cabinet-dealer-offers-slider {
+	margin-bottom: -36px; // dots
+	
+	@include mq(sm) {
+		margin-bottom: -6px;
+	}
+
+	.slick-arrow {
+		display: none;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
+		font-size: 0;
+		transition: box-shadow $transition-duration-base-min;
+		
+		.mod_no-touchevents & {
+			
+			&:hover {
+				box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
+			}
+		}
+		
+		@include mq(sx) {
+			@include size(#{map_get($mq-container-indents, "sx") / 2});
+
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 99;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			background: #fff;
+			outline: none;
+		}
+
+		&:focus {
+
+			.icon {
+				fill: $color-base
+			}
+		}
+
+		&.slick-disabled {
+			pointer-events: none;
+			opacity: .4;
+		}
+
+		&.slick-prev {
+			left: -48px;
+
+			.icon {
+				transform: rotate(90deg);
+			}
+		}
+
+		&.slick-next {
+			right: -48px;
+
+			.icon {
+				transform: rotate(-90deg);
+			}
+		}
+
+		.icon {
+			@include size(2rem);
+
+			fill: $color-base;
+		}
+	}
+
+	.slick-list {
+		@include mq(sm) {
+			margin-right: -(map_get($mq-container-indents, "sm"));
+			margin-bottom: -1 * map_get($mq-container-indents, "sx") / 2;
+			margin-left: -(map_get($mq-container-indents, "sm"));
+			padding-right: map_get($mq-container-indents, "sm");
+			padding-left: map_get($mq-container-indents, "sm");
+			overflow: hidden;
+		}
+
+		@include mq(sx) {
+			margin-right: -1.2rem;
+			margin-left: -1.2rem;
+		}
+	}
+
+	.slick-slide {
+		padding-bottom: map_get($mq-container-indents, "sx") / 2;
+		outline: none;
+
+		&:not(:last-child) {
+			@include mq(sm) {
+				margin-right: map_get($mq-container-indents, "sm");
+			}
+		}
+
+		@include mq(sx) {
+			margin: 0 1.2rem;
+		}
+	}
+
+	.slick-dots {
+		position: relative;
+		top: -18px; // magic
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		@include mq(sm) {
+			top: 14px;
+		}
+
+		> li {
+			@include size(.6rem);
+
+			display: block;
+			line-height: 1;
+
+			&:not(:last-child) {
+				margin-right: map_get($mq-container-indents, "sm") / 2;
+			}
+
+			&.slick-active {
+
+				> button {
+					background: $color-base;
+				}
+			}
+
+			> button {
+				@include size(100%);
+
+				display: block;
+				border-radius: 50%;
+				background: $color-lightest;
+				font-size: 0;
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+}

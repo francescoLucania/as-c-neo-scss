@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@keyframes ng-main-view__fade-in-animation {
+	from {
+		opacity: 0;
+	}
+	
+	to {
+		opacity: 1;
+	}
+}
+
+.ng-main-view {
+	position: relative;
+	z-index: 100;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	
+	.main-breadcrumbs {
+		z-index: 100;
+	}
+	
+	main {
+		z-index: 99;
+	}
+	
+	&--loader {
+		opacity: 0;
+		transition: opacity $transition-duration-base-min;
+		
+		.is-load & {
+			animation: ng-main-view__fade-in-animation  $transition-duration-base-min linear $transition-duration-base-min forwards;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+  "mockData":
+    [
+      {
+        "id": "001",
+        "label": "В кредит + трейд-ин.",
+        "price": "7400000",
+        "sale": "600000",
+        "checked": "checked"
+      },
+      {
+        "id": "002",
+        "label": "В кредит.",
+        "price": "7600000",
+        "sale": "400000",
+        "checked": "checked"
+      },
+      {
+        "id": "003",
+        "label": "В трейд-ин.",
+        "price": "7800000",
+        "sale": "200000",
+        "checked": "checked"
+      },
+      {
+        "id": "004",
+        "label": "За наличные.",
+        "price": "8000000",
+        "sale": "",
+        "checked": "checked"
+      }
+    ]
+}

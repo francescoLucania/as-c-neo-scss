@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.clear-header {
+	border-bottom: 1px solid #D9DADB;
+
+	&__body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: map_get($mq-indents, "sx");
+	}
+
+	&__logo {
+		width: 105px;
+
+		@include mq(sx) {
+			width: 125px;
+		}
+
+		> img {
+			display: block;
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+
+			&[data-color="white"] {
+				display: none;
+			}
+
+			&[data-color="black"] {
+				display: block;
+			}
+
+			.mod_flexboxtweener & {
+				flex-shrink: 0;
+			}
+		}
+	}
+}

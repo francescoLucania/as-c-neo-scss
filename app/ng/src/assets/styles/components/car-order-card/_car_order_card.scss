@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+.car-order-card {
+	padding: map_get($mq-container-indents, "sm");
+	border-radius: $border-radius-base;
+	background: #fff;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
+
+	.as-popover-auto-block & {
+		
+		.car-order-card__title {
+			padding-right: 28px; // radio width & gutter
+		}
+	}
+
+	&__header {
+		margin-bottom: 12px;
+	}
+
+	&__title {
+		@include text-base-big(700);
+
+		&[data-brand-name] {
+			@include brand-logo;
+
+			position: relative;
+			padding-left: 4rem;
+
+			&::before {
+				@include size(2.4rem);
+
+				position: absolute;
+				top: -1px;
+				left: 0;
+				margin-right: map-get($mq-container-indents, "sm");
+			}
+		}
+	}
+
+	&__badge-block {
+		@include scroll-not-scrollbar();
+
+		margin-right: -1 * map_get($mq-container-indents, "sm");
+		margin-bottom: map_get($mq-container-indents, "sm");
+		margin-left: -1 * map_get($mq-container-indents, "sm");
+	}
+
+	&__badge-block-container {
+		display: inline-flex;
+		padding: 0 map_get($mq-container-indents, "sm");
+	}
+
+	&__image {
+		margin-bottom: map_get($mq-container-indents, "sm");
+		max-width: 30.8rem;
+
+		img {
+			margin: 0 auto;
+			height: auto;
+			vertical-align: top;
+		}
+	}
+
+	&__options-block {
+
+	}
+
+	&__options-block-item {
+		@include text-base(400);
+
+		&--justify-content-space-between {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		a {
+			font-weight: 500;
+		}
+	}
+
+	&__options-block-item-color-icon {
+		@include size(12px);
+
+		position: relative;
+		top: 2px;
+		display: inline-block;
+		margin: 0 .8rem;
+		border-radius: 50%;
+		border: 1px solid $color-base;
+	}
+
+	&__views-indicator {
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: map_get($mq-container-indents, "sm");
+
+		.icon {
+			@include size(2rem);
+
+			margin-right: .4rem;
+			fill: $color-base;
+		}
+
+		span {
+			color: $color-light;
+		}
+	}
+
+	&__price-block {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: map_get($mq-container-indents, "sm");
+	}
+
+	&__price-block-title {
+
+	}
+
+	&__price-block-button {
+		@include interact(text-decoration, underline);
+
+		position: relative;
+		padding-right: 24px; // .icon width & margin
+		font-weight: 500;
+
+		&:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+
+		&.is-active {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		span {
+			@include ellipsis(100%, block);
+		}
+
+		.icon {
+			@include size(2rem);
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			fill: $color-base;
+		}
+	}
+
+	&__price-block-total {
+		text-align: right;
+	}
+
+	&__price-line {
+		@include header-brand-h3-black(700);
+
+		&--old {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 0;
+				left: 0;
+				transform: rotate(-2deg);
+				height: 1px;
+				background: $color-base;
+			}
+		}
+
+		&--sale {
+			@include text-base-big(700);
+
+			color: $brand-grapefruit;
+		}
+		
+		.rub {
+			font-weight: 400;
+		}
+	}
+
+	&__price-block-current {
+
+	}
+
+	&__dealer-block,
+	&__list-box {
+		margin: {
+			top: map_get($mq-container-indents, "sm");
+			right: -1 * map_get($mq-container-indents, "sm");
+			bottom: -1 * map_get($mq-container-indents, "sm");
+			left: -1 * map_get($mq-container-indents, "sm");
+		};
+	}
+
+	&__dealer-block-map {
+		position: relative;
+		height: 12.8rem;
+		background: $color-n-lightest;
+
+		.vue-map-container {
+			height: 100%;
+		}
+	}
+
+	&__dealer-block-content,
+	&__list-box {
+		padding: map_get($mq-container-indents, "sm");
+	}
+
+	&__dealer-block-title {
+		@include text-base(700)
+	}
+
+	&__list-box {
+		padding-top: calc(#{map_get($mq-container-indents, "sm")}  - 1px);
+		border-top: 1px solid $color-n-lightest;
+	}
+}

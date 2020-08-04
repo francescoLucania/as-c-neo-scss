@@ -1,0 +1,270 @@
+@charset "UTF-8";
+
+.auto-status-badge {
+    @include text-minimal(400);
+
+    display: inline-flex;
+    padding: .5rem;
+    border-radius: 1.2rem;
+    border: 1px solid $color-lighter-secondary;
+
+    line-height: 1;
+
+    > .icon {
+        @include size(1.2rem);
+
+        margin-right: .6rem;
+    }
+
+    > span {
+        white-space: nowrap;
+        color: $color-base;
+    }
+}
+
+
+.information-badge-grid {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: -1 * map_get($mq-indents, "sm") / 3;
+
+    @include mq(sm) {
+        position: relative;
+    }
+
+    > li {
+        display: block;
+        max-height: 2.4rem;
+        //margin-bottom: map_get($mq-indents, 'sm') / 3;
+
+        &:not(:last-child) {
+            margin-right: map_get($mq-container-indents, "sx") / 8;
+        }
+    }
+}
+
+.auto-card-information-badge {
+    @include text-small(500);
+    @include interact(text-decoration, none);
+
+    display: block;
+    transition: all $transition-duration-base-min;
+
+    &[data-type="grapefruit"] {
+        color: $brand-grapefruit;
+    }
+
+    &[data-type="color-base"] {
+        @include interact(border-color, $color-light);
+        color: $color-light;
+    }
+
+    &[data-type="brand-bluish"] {
+        color: $brand-bluish;
+    }
+
+    &[data-type="icon"] {
+        @include size(2.4rem);
+
+        padding: 0;
+        font-size: 0;
+
+        > .icon {
+            @include size(100%);
+        }
+    }
+
+    &[data-type="icon-no-round"] {
+        height: 2.4rem;
+        padding: 0;
+        font-size: 0;
+
+        > .icon {
+            @include size(100%);
+        }
+    }
+}
+
+.base-badge {
+    @include text-minimal(400);
+
+    padding: .5rem .8rem .4rem;
+    border-radius: $border-radius-min;
+    white-space: nowrap;
+    color: #fff;
+    cursor: default;
+
+    &[data-type="white"] {
+        background: #fff;
+        color: $color-base;
+    }
+
+    &[data-type="sale"] {
+        background: $brand-grapefruit;
+        color: #fff;
+    }
+}
+
+.dotted-badge {
+    @include size(2.4rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: transparent;
+
+    > span {
+        @include size(.2rem);
+
+        border-radius: 50%;
+        background: $color-base;
+
+        &:not(:last-child) {
+            margin-right: .2rem;
+        }
+    }
+
+    .mod_no-touchevents & {
+
+        .auto-card & {
+
+        }
+    }
+
+    &:focus {
+        background: $color-lightest-secondary;
+    }
+}
+
+.action-star-badge {
+    @include size(2.4rem);
+
+    border-radius: 50%;
+    background: $brand-grapefruit;
+
+    .car-brand-item &,
+    .car-type-item & {
+        position: absolute;
+        top: -1.6rem;
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    &::before {
+        @include size(1.6rem);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        background: {
+            position: 50%;
+            size: contain;
+            repeat: no-repeat;
+            image: url(../img/icons/star-white.svg);
+        };
+        content: "";
+    }
+}
+
+.badge-full-bg-line {
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: auto;
+}
+.blue-badge,
+.badge-full-bg {
+    @include text-base(500);
+
+    background: $brand-sky;
+    color: #ffffff;
+    padding: map_get($mq-container-indents, 'sx') / 8 - 2 map_get($mq-container-indents, 'sx') / 4;
+    border-radius: map_get($mq-container-indents, 'sx') / 4;
+    white-space: nowrap;
+
+	@at-root button#{&} {
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+    & + & {
+        margin-left: map_get($mq-container-indents, 'sx') / 8;
+    }
+
+    &--yellow {
+        background: #FFD13B;
+        color: $color-base;
+    }
+
+    &--grey {
+        background: $color-lightest-border2;
+        color: $color-base;
+    }
+
+    &--turquoise {
+        background: $brand-turquoise;
+        color: #fff;
+    }
+
+    &--online {
+		position: relative;
+		padding-right: 26px;
+		padding-left: 26px;
+
+		&::before,
+		&::after {
+			@include size(.9rem, 2rem);
+
+			content: "";
+			position: absolute;
+			top: 50%;
+			background: {
+				position: 50%;
+				size: contain;
+				repeat: no-repeat;
+				image: url("../img/icons/online-badges-lines.svg");
+			};
+		}
+
+		&::before {
+			transform: translateY(-50%);
+			left: map_get($mq-container-indents, "sm") / 2;
+		}
+
+		&::after {
+			right: map_get($mq-container-indents, "sm") / 2;
+			transform: translateY(-50%) rotate(180deg);
+		}
+    }
+
+	&--booking {
+		position: relative;
+		padding-left: 4.4rem;
+		background-color: $brand-turquoise;
+
+		&::before {
+			@include size(2rem);
+
+			position: absolute;
+			top: 6px;
+			left: map_get($mq-container-indents, "sm");
+			background: {
+				position: 50%;
+				size: contain;
+				image: url("../img/icons/white-lock.svg");
+			};
+			content: "";
+		}
+	}
+	
+    .new-car & {
+        position: absolute;
+        left: map_get($mq-container-indents, 'sx') / 4;
+        top: map_get($mq-container-indents, 'sx') / 4;
+    }
+}

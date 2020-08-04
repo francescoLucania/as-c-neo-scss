@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.ng-thanks {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: calc(100% - 48px); // site-header
+	
+	.is-load & {
+		display: flex;
+	}
+	
+	&__content {
+		text-align: center;
+	}
+	
+	&__content-img {
+		margin: 0 auto map_get($mq-container-indents, "sx") / 2;
+		max-width: 12.8rem;
+		
+		img {
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+	}
+	
+	&__content-title {
+		@include as-c-header-h2;
+		
+		&:not(:last-child) {
+			margin-bottom: map_get($mq-container-indents, "sm") / 4;
+		}
+	}
+	
+	&__content-subtitle {
+		@include text-base-medium;
+		
+		color: $color-lighter;
+		
+		@include mq(sm-md) {
+			@include text-base-big;
+		}
+	}
+	
+	&__next-button-block {
+		text-align: center;
+		
+		&:not(:first-child) {
+			margin-top: map_get($mq-container-indents, "sm");
+		}
+		
+		a,
+		button {
+			@include text-base-big(700);
+			@include interact(text-decoration, underline);
+			
+			display: inline-block;
+			
+			&:focus {
+				outline: none;
+				text-decoration: underline;
+			}
+		}
+	}
+}

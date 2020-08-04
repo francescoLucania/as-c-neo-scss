@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.main-fade {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 153;
+	display: none;
+	background: rgba(0, 0, 0, 0.14);
+	
+	.ng-main-view & {
+		z-index: 99;
+	}
+
+	&.is-active {
+		display: block;
+	}
+}

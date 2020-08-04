@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.sms-form-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 88px); // header height
+	
+	&--loader {
+		opacity: 0;
+		transition: opacity $transition-duration-base-min;
+		
+		.is-load & {
+			animation: common-form-page__fade-in-animation  $transition-duration-base-min linear $transition-duration-base-min forwards;
+		}
+	}
+
+	&__body {
+		padding: 0 map_get($mq-container-indents, "sm");
+		min-width: 100%;
+
+		@include mq(md) {
+			min-width: calc(64rem + #{map_get($mq-container-indents, "sm")})
+		}
+	}
+}

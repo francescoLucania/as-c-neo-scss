@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.chat-button {
+	@include size(#{map_get($mq-container-indents, "sx")});
+	@include text-base-big();
+	
+	position: fixed;
+	right: map_get($mq-container-indents, "sx");
+	bottom: map_get($mq-container-indents, "sx");
+	z-index: 99999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background: $brand-turquoise;
+	color: #fff;
+	
+	@include mq(sm) {
+		@include size(#{map_get($mq-container-indents, "sx") / 2});
+		
+		right: map_get($mq-container-indents, "sx") / 2;
+		bottom: map_get($mq-container-indents, "sx") / 2;
+	}
+	
+	.js-as-c-popover-reference-point {
+		@include size(2rem);
+		
+		position: absolute;
+		right: -1 * map_get($mq-container-indents, "sm");
+		bottom: -1 * map_get($mq-container-indents, "sm");
+		background: red;
+	}
+}

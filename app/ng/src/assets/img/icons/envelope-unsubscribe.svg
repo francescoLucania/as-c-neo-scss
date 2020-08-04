@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="48px" viewBox="0 0 80 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <g id="30.-Subscription" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="30.4.2-Subscription" transform="translate(-680.000000, -359.000000)">
+            <g id="Group-18" transform="translate(340.000000, 251.000000)">
+                <g id="Group-10" transform="translate(316.000000, 68.000000)">
+                    <g id="Group-8" transform="translate(24.000000, 40.000000)">
+                        <rect id="Rectangle-3" fill="#FFBB03" x="0" y="0" width="80" height="48"></rect>
+                        <path d="M72.7449845,40.3329182 C68.9829572,36.1315566 64.719844,34 59.9999906,34 C55.280156,34 51.0170428,36.1315566 47.2550155,40.3329182 C46.8865964,40.7443617 46.9214746,41.3765654 47.3329182,41.7449845 C47.7443617,42.1134036 48.3765654,42.0785254 48.7449845,41.6670818 C52.1464012,37.8684434 55.883288,36 59.9999906,36 C64.116712,36 67.8535988,37.8684434 71.2550155,41.6670818 C71.6234346,42.0785254 72.2556383,42.1134036 72.6670818,41.7449845 C73.0785254,41.3765654 73.1134036,40.7443617 72.7449845,40.3329182 Z" id="Oval" fill="#1A1A1A" fill-rule="nonzero"></path>
+                        <g id="Group-20" transform="translate(52.000000, 26.000000)">
+                            <circle id="Oval" fill="#FFFFFF" cx="3" cy="3" r="3"></circle>
+                            <circle id="Oval" fill="#1A1A1A" cx="4.5" cy="3.5" r="1.5"></circle>
+                        </g>
+                        <g id="Group-19" transform="translate(62.000000, 26.000000)">
+                            <circle id="Oval" fill="#FFFFFF" cx="3" cy="3" r="3"></circle>
+                            <circle id="Oval" fill="#1A1A1A" cx="4.5" cy="3.5" r="1.5"></circle>
+                        </g>
+                        <polyline id="Line" fill="#FFFFFF" points="0 2.08166817e-16 40 24 80 0"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,75 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ng-test-primary: mat-palette($mat-indigo);
+$ng-test-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ng-test-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$ng-test-theme: mat-light-theme($ng-test-primary, $ng-test-accent, $ng-test-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ng-test-theme);
+
+@import "base_styles";
+
+@import "fonts";
+
+@import "typography";
+
+@import "styles";
+
+@import "helpers";
+
+// Overrides
+@import "overrides/mat_tooltip";
+
+// common
+@import "components/clear_header";
+
+@import "components/ng-loader/ng_loader";
+
+@import "components/common-form-page/common_form_page";
+
+@import "components/car-order-card/car_order_card";
+
+@import "components/as-c-popover/as_c_popover";
+
+@import "components/as-popover-auto-block/as_popover_auto_block";
+
+@import "components/banners/n_loyaty_banner";
+
+@import "components/interactive-user-popover-body/interactive_user_popover_body";
+
+@import "components/banners/choice_auto_banner";
+
+@import "components/information-tab/information_tab";
+
+@import "components/as-c-icon-list/as_c_icon_list";
+
+// personal-cabinet
+
+@import "components/personal-cabinet/price_checkboxes_group";
+
+@import "components/personal-cabinet/dealer_card";
+
+@import "components/personal-cabinet/dealer_offers_slider";
+
+@import "components/chat/as-c-chat/as_c_chat";
+
+@import "components/chat/chat-button/chat_button";

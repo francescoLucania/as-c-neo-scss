@@ -1,0 +1,259 @@
+{
+  "mockData":[
+    {
+      "id": "sks1212hj12312",
+      "title": "Автоцентр лоло",
+      "description": "Официальный дилер",
+      "tags": [
+        "Лучшая цена за наличные",
+        "Авто и ПТС в наличии"
+      ],
+      "map": {
+        "lat": "37.610064",
+        "lang": "37.610064"
+      },
+      "priceTypes": [
+        {
+          "id": "001",
+          "label": "В кредит + трейд-ин.",
+          "price": "7400000",
+          "sale": "600000",
+          "checked": "checked"
+        },
+        {
+          "id": "002",
+          "label": "В кредит.",
+          "price": "7600000",
+          "sale": "400000",
+          "checked": "checked"
+        },
+        {
+          "id": "003",
+          "label": "В трейд-ин.",
+          "price": "7800000",
+          "sale": "200000",
+          "checked": "checked"
+        },
+        {
+          "id": "004",
+          "label": "За наличные.",
+          "price": "8000000",
+          "sale": "",
+          "checked": "checked"
+        }
+      ],
+      "activePriceTypes": { "id": "CreditAndTradeIn", "label": "В кредит + трейд-ин", "sale": "200000", "price": "2100000"},
+      "actions": [
+        { "id": "4", "label": "Получить предложение" }
+      ],
+      "status": "",
+      "activeStatus": {
+      }
+    },
+
+    {
+      "id": "skshj1231errfffg2",
+      "title": "Автоцентр КАТэ",
+      "description": "Официальный дилер",
+      "tags": [
+        "Лучшая цена за наличные",
+        "Авто и ПТС в наличии"
+      ],
+      "map": {
+        "lat": "37.610064",
+        "lang": "37.610064"
+      },
+      "priceTypes": [
+        {
+          "id": "001",
+          "label": "В кредит + трейд-ин.",
+          "price": "7400000",
+          "sale": "600000",
+          "checked": "checked"
+        },
+        {
+          "id": "002",
+          "label": "В кредит.",
+          "price": "7600000",
+          "sale": "400000",
+          "checked": "checked"
+        },
+        {
+          "id": "003",
+          "label": "В трейд-ин.",
+          "price": "7800000",
+          "sale": "200000",
+          "checked": "checked"
+        },
+        {
+          "id": "004",
+          "label": "За наличные.",
+          "price": "8000000",
+          "sale": "",
+          "checked": "checked"
+        }
+      ],
+      "activePriceTypes": { "id": "CreditAndTradeIn", "label": "В кредит + трейд-ин", "sale": "200000", "price": "2100000"},
+      "actions": [
+        { "id": "4", "label": "Получить предложение" }
+      ],
+      "status": "",
+      "activeStatus": {
+      }
+    },
+
+    {
+      "id": "skshj1weew432312",
+      "title": "Автоцентр лоло",
+      "description": "Официальный дилер",
+      "tags": [
+        "Лучшая цена за наличные",
+        "Авто и ПТС в наличии"
+      ],
+      "map": {
+        "lat": "37.610064",
+        "lang": "37.610064"
+      },
+      "priceTypes": [
+        {
+          "id": "001",
+          "label": "В кредит + трейд-ин.",
+          "price": "7400000",
+          "sale": "600000",
+          "checked": "checked"
+        },
+        {
+          "id": "002",
+          "label": "В кредит.",
+          "price": "7600000",
+          "sale": "400000",
+          "checked": "checked"
+        },
+        {
+          "id": "003",
+          "label": "В трейд-ин.",
+          "price": "7800000",
+          "sale": "200000",
+          "checked": "checked"
+        },
+        {
+          "id": "004",
+          "label": "За наличные.",
+          "price": "8000000",
+          "sale": "",
+          "checked": "checked"
+        }
+      ],
+      "activePriceTypes": { "id": "CreditAndTradeIn", "label": "В кредит + трейд-ин", "sale": "200000", "price": "2100000"},
+      "actions": [
+        { "id": "4", "label": "Получить предложение" }
+      ],
+      "status": "",
+      "activeStatus": {
+      }
+    },
+
+    {
+      "id": "sks32423hj12312",
+      "title": "Автоцентр КАТэ",
+      "description": "Официальный дилер",
+      "tags": [
+        "Лучшая цена за наличные",
+        "Авто и ПТС в наличии"
+      ],
+      "map": {
+        "lat": "37.610064",
+        "lang": "37.610064"
+      },
+      "priceTypes": [
+        {
+          "id": "001",
+          "label": "В кредит + трейд-ин.",
+          "price": "7400000",
+          "sale": "600000",
+          "checked": "checked"
+        },
+        {
+          "id": "002",
+          "label": "В кредит.",
+          "price": "7600000",
+          "sale": "400000",
+          "checked": "checked"
+        },
+        {
+          "id": "003",
+          "label": "В трейд-ин.",
+          "price": "7800000",
+          "sale": "200000",
+          "checked": "checked"
+        },
+        {
+          "id": "004",
+          "label": "За наличные.",
+          "price": "8000000",
+          "sale": "",
+          "checked": "checked"
+        }
+      ],
+      "activePriceTypes": { "id": "CreditAndTradeIn", "label": "В кредит + трейд-ин", "sale": "200000", "price": "2100000"},
+      "actions": [
+        { "id": "4", "label": "Получить предложение" }
+      ],
+      "status": "",
+      "activeStatus": {
+      }
+    },
+
+    {
+      "id": "sksqwdsxws_dghmhj12312",
+      "title": "Автоцентр КАТэ",
+      "description": "Официальный дилер",
+      "tags": [
+        "Лучшая цена за наличные",
+        "Авто и ПТС в наличии"
+      ],
+      "map": {
+        "lat": "37.610064",
+        "lang": "37.610064"
+      },
+      "priceTypes": [
+        {
+          "id": "001",
+          "label": "В кредит + трейд-ин.",
+          "price": "7400000",
+          "sale": "600000",
+          "checked": "checked"
+        },
+        {
+          "id": "002",
+          "label": "В кредит.",
+          "price": "7600000",
+          "sale": "400000",
+          "checked": "checked"
+        },
+        {
+          "id": "003",
+          "label": "В трейд-ин.",
+          "price": "7800000",
+          "sale": "200000",
+          "checked": "checked"
+        },
+        {
+          "id": "004",
+          "label": "За наличные.",
+          "price": "8000000",
+          "sale": "",
+          "checked": "checked"
+        }
+      ],
+      "activePriceTypes": { "id": "CreditAndTradeIn", "label": "В кредит + трейд-ин", "sale": "200000", "price": "2100000"},
+      "actions": [
+        { "id": "4", "label": "Получить предложение" }
+      ],
+      "status": "",
+      "activeStatus": {
+      }
+    }
+
+  ]
+}

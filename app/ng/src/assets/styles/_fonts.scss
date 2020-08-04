@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SFPro/SFProDisplay-Bold.eot");
+	src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
+		url("../fonts/SFPro/SFProDisplay-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SFPro/SFProDisplay-Semibold.eot");
+	src: local("SF Pro Display Semibold"), local("SFProDisplay-Semibold"),
+		url("../fonts/SFPro/SFProDisplay-Semibold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SFPro/SFProDisplay-Medium.eot");
+	src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
+		url("../fonts/SFPro/SFProDisplay-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SFPro/SFProDisplay-Regular.eot");
+	src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"),
+		url("../fonts/SFPro/SFProDisplay-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}

@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+.as-c-popover {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	display: none;
+
+	&.is-open {
+		display: block;
+	}
+
+	&__fade {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+
+		@include mq(sm) {
+			background: rgba($color-base, .3);
+		}
+	}
+
+	&__body {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(-100vw, -100vw);
+
+		@include mq(sm) {
+			top: map_get($mq-container-indents, "sx") !important;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			transform: none !important;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			width: 100% !important;
+			border-top-right-radius: $border-radius-base;
+			border-top-left-radius: $border-radius-base;
+		}
+		
+		&::before {
+			@include mq(sm) {
+				@include size(32px, 4px);
+				
+				content: "";
+				position: relative;
+				top: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+				min-height: 4px;
+				pointer-events: none;
+				border-radius: $border-radius-min;
+				background: #FFFFFF;
+				box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+	
+	&__body-close-fate-emitter {
+		display: none;
+		
+		@include mq(sm) {
+			@include size(100%);
+			
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			display: block;
+		}
+	}
+	
+	&__body-scroll-container {
+		@include mq(sm) {
+			position: relative;
+			z-index: 10;
+			max-height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+	}
+
+	.region-filter-body, .tooltip-regions-body {
+		@include mq(sm) {
+			position: relative;
+		}
+	}
+
+	&__footer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 9999999;
+		display: none;
+		height: map_get($mq-container-indents, "sx");
+
+		@include mq(sm) {
+			display: block;
+		}
+	}
+
+	&__footer-button {
+		@include text-base-big(700);
+		@include ellipsis;
+		@include size(100%);
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 20px;
+		border-bottom-right-radius: $border-radius-base;
+		border-bottom-left-radius: $border-radius-base;
+		border-top: 1px solid $color-n-lightest;
+		background: #fff;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+		}
+
+		.mod_no-touchevents & {
+
+			&:hover {
+				box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+			}
+		}
+	}
+}

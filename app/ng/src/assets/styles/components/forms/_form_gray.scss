@@ -1,0 +1,191 @@
+.ui-base-form,
+.loyalty-popup,
+.form-gray {
+
+  &__white {
+    background: #ffffff;
+  }
+
+  &__white-inner {
+    padding: map_get($mq-container-indents, 'sx') / 2 map_get($mq-container-indents, 'sx') / 4 map_get($mq-container-indents, 'sx') / 4;
+
+    @include mq(sx) {
+      padding: map_get($mq-container-indents, 'sx');
+    }
+
+    &--narrow {
+      padding: map_get($mq-container-indents, 'sx') / 2 map_get($mq-container-indents, 'sx') / 4;
+    }
+  }
+
+  &__container,
+  &__form {
+    padding-left: map_get($mq-container-indents, 'sx');
+    padding-right: map_get($mq-container-indents, 'sx');
+
+    @include mq-custom(max, 760px) {
+      padding-left: map_get($mq-container-indents, 'sx') / 2;
+      padding-right: map_get($mq-container-indents, 'sx') / 2;
+    }
+
+    @include mq-custom(max, 700px) {
+      padding-left: map_get($mq-container-indents, 'sx') / 4;
+      padding-right: map_get($mq-container-indents, 'sx') / 4;
+    }
+  }
+
+
+  &__form {
+    padding-top: map_get($mq-container-indents, 'sx');
+    padding-bottom: map_get($mq-container-indents, 'sx') / 2;
+
+    @include mq-custom(max, 760px) {
+      padding-left: map_get($mq-container-indents, 'sx') / 2;
+      padding-right: map_get($mq-container-indents, 'sx') / 2;
+    }
+
+    @include mq-custom(max, 700px) {
+      padding-top: map_get($mq-container-indents, 'sx') / 4;
+      padding-bottom: map_get($mq-container-indents, 'sx') / 4;
+    }
+
+    .button {
+      margin-top: map_get($mq-container-indents, 'sx') / 2;
+
+      @include mq-custom(max, 700px) {
+        margin-top: map_get($mq-container-indents, 'sx') / 4;
+      }
+    }
+
+    &--sm-fixed-button-margin {
+      @include mq(sm) {
+        padding-bottom: map_get($mq-container-indents, 'sx') + map_get($mq-container-indents, 'sx') / 4 !important;
+      }
+    }
+  }
+
+  &__form-inner-group {
+
+  }
+
+  &__form-inner {
+    @include mq-custom(min, 700px) {
+      @include grid;
+    }
+
+    &:not(:last-child) {
+      &:not(.ui-base-form__form-inner--sx-mb-16) {
+
+        .input-with-desc,
+        .vs__dropdown-toggle,
+        .select-native,
+        .v-select {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      &:not(.ui-base-form__form-inner--sx-mb-16) {
+
+        .input-with-desc,
+        .vs__dropdown-toggle,
+        .select-native,
+        .v-select {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+      }
+    }
+
+    &--sx-mb-16 {
+      @include mq(sx) {
+        margin-bottom: map_get($mq-container-indents, "sm");
+      }
+    }
+
+    &--sm-x-negative-margins {
+      @include mq(sm) {
+        margin-right: -1 * map_get($mq-container-indents, "sm");
+        margin-left: -1 * map_get($mq-container-indents, "sm");
+      }
+    }
+  }
+
+  &__form-column {
+
+    @include mq-custom(min, 700px) {
+      @include grid-col-mx(1/2);
+    }
+
+    &:not(:last-child) {
+      @include mq(sm) {
+        margin-bottom: 2px;
+      }
+
+      .input-with-desc,
+      .vs__dropdown-toggle,
+      .select-native,
+      .v-select {
+        @include mq(sm) {
+          margin-bottom: 2px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      .input-with-desc,
+      .vs__dropdown-toggle,
+      .select-native,
+      .v-select {
+        @include mq(sm) {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+      }
+    }
+
+    &--with-top-line {
+      @include mq-custom(max, 700px) {
+        margin-top: .2rem;
+      }
+    }
+  }
+
+  &__form-info {
+    position: absolute;
+    right: map_get($mq-container-indents, 'sx') / 4;
+    top: calc(50% - 3.2px);
+    z-index: 3;
+    outline: none;
+  }
+
+  &__form-agreement {
+    @include text-minimal(400);
+
+    margin-top: map_get($mq-container-indents, 'sx') / 4;
+    color: $color-lighter;
+    text-align: center;
+
+    a {
+      color: $color-base;
+    }
+  }
+}
+
+.ui-base-form,
+.loyalty-popup,
+.form-gray {
+  &__form {
+    @include mq(sx) {
+      padding-top: map_get($mq-container-indents, 'sx') / 2;
+    }
+
+    @include mq(sm) {
+      padding-bottom: map_get($mq-container-indents, 'sx') / 4;
+    }
+  }
+}

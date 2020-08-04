@@ -1,0 +1,13 @@
+{
+  "name": "frontend-lib",
+  "version": "1.0.0",
+  "description": "AutoSpot Frontend Library",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/autospot_ru/frontend-lib.git"
+  },
+  "private": true
+}

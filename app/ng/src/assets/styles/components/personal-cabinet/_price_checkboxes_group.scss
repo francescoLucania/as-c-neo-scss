@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+.price-checkboxes-group {
+	border-radius: $border-radius-base;
+	border: 1px solid $color-transparent-black;
+	background: #fff;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
+
+	&.price-checkboxes-group--popover-modifier {
+		box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+
+		@include mq(sm) {
+			box-shadow: none;
+			border-bottom-color: transparent;
+		}
+
+		.price-checkboxes-group__item,
+		.price-checkboxes-group__mobile-footer {
+			@include mq(sx) {
+
+				&:first-child {
+
+					.price-checkboxes-group__item-content {
+						
+						@include mq(sm) {
+							padding-top: 12px;
+						}
+						
+						//@include mq(sx) {
+						//	padding-top: 8px;
+						//}
+					}
+				}
+
+				&:last-child {
+
+					.price-checkboxes-group__item-content {
+						@include mq(sm) {
+							padding-bottom: 12px;
+						}
+						
+						//@include mq(sx) {
+						//	padding-bottom: 20px;
+						//}
+					}
+				}
+
+				&:not(:first-child) {
+
+					.price-checkboxes-group__item-content {
+						padding-top: 5px;
+						border-top: 1px solid transparent;
+					}
+				}
+
+				.price-checkboxes-group__item-content-value {
+					@include text-base(700);
+				}
+
+				.price-checkboxes-group__item-content {
+					padding-top: 6px;
+					padding-bottom: 6px;
+				}
+			}
+		}
+	}
+	
+	&.price-checkboxes-group--submit-footer {
+		.price-checkboxes-group__submit-footer {
+			@include mq(sx) {
+				display: block;
+			}
+		}
+	}
+
+	&.price-checkboxes-group--pointer-events-none {
+
+		input {
+			pointer-events: none;
+		}
+
+		.price-checkboxes-group__item-content-icon {
+			display: none;
+		}
+	}
+
+	&__mobile-header,
+	&__mobile-footer {
+		@include text-base-big(700);
+
+		display: none;
+		padding: 20px map_get($mq-container-indents, "sm");
+		text-align: center;
+
+		&:last-child {
+
+			.price-checkboxes-group--popover-modifier & {
+				border-top: 1px solid $color-n-lightest;
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+	
+	&__mobile-header {
+		padding-bottom: 19px;
+		border-bottom: 1px solid $color-lightest-border;
+		
+		.price-checkboxes-group--popover-modifier & {
+			@include mq(sm) {
+				display: block;
+				width: 100%;
+			}
+		}
+		
+		+ .price-checkboxes-group__item {
+			
+			.price-checkboxes-group__item-content {
+				padding-top: 12px !important;
+				//border-top-right-radius: $border-radius-base !important;
+				//border-top-left-radius: $border-radius-base !important;
+				border-top: 0 !important;
+				overflow: hidden !important;
+				
+				@include mq(sx) {
+					padding-top: 20px !important;
+				}
+				
+				.price-checkboxes-group--popover-modifier & {
+					@include mq(sx) {
+						padding-top: 8px !important;
+					}
+				}
+			}
+		}
+	}
+	
+	&__mobile-footer {
+		
+		.price-checkboxes-group--popover-modifier & {
+			@include mq(sm) {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	
+	&__submit-footer {
+		display: none;
+		padding: map_get($mq-container-indents, "sm") - 1px map_get($mq-container-indents, "sm") map_get($mq-container-indents, "sm");
+		border-top: 1px solid $color-n-lightest;
+	}
+	
+	&__submit-footer-description {
+		margin-top: map_get($mq-container-indents, "sm");
+		text-align: center;
+		font-weight: 500;
+		color: $color-lighter;
+	}
+	
+	&__main {
+		
+		.price-checkboxes-group--popover-modifier & {
+			@include mq(sx) {
+				padding-top: map_get($mq-container-indents, "sm") / 2;
+				padding-bottom: map_get($mq-container-indents, "sm") / 2;
+			}
+		}
+	}
+	
+	&__item,
+	&__mobile-footer {
+		position: relative;
+
+		.price-checkboxes-group__item-content {
+			padding: 12px map_get($mq-container-indents, "sm");
+			
+			@include mq(sx) {
+				padding: 20px map_get($mq-container-indents, "sm");
+			}
+		}
+
+		&:not(:first-child) {
+			
+			.price-checkboxes-group__item-content {
+				padding-top: 12px;
+				border-top: 1px solid $color-lightest-border;
+				
+				@include mq(sx) {
+					padding-top: 20px;
+				}
+			}
+		}
+		
+		&:last-of-type {
+			
+			.price-checkboxes-group__item-content {
+				//border-bottom-right-radius: $border-radius-base;
+				//border-bottom-left-radius: $border-radius-base;
+			}
+		}
+	}
+
+	&__item-input {
+		@include size(100%);
+		@include interact(border-color, $color-base, "hover .price-checkboxes-group__item-content-icon");
+		
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+		outline: none;
+		cursor: pointer;
+		
+		&:focus {
+			+ .price-checkboxes-group__item-content {
+				box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+				
+				.price-checkboxes-group--popover-modifier & {
+					background-color: $color-lightest-porcelain;
+					box-shadow: none;
+				}
+			}
+			
+			+ .price-checkboxes-group__item-content .price-checkboxes-group__item-content-icon {
+				border-color: $color-base;
+			}
+		}
+		
+		&:checked {
+			@include interact(background-color, $brand-green-pea, "hover .price-checkboxes-group__item-content-icon");
+			
+			[data-disabled="true"] & {
+				pointer-events: none;
+				
+				+ .price-checkboxes-group__item-content .price-checkboxes-group__item-content-icon {
+					background: $color-lightest;
+				}
+			}
+			
+			.mod_no-touchevents & {
+				
+				&:hover {
+					
+					+ .price-checkboxes-group__item-content .price-checkboxes-group__item-content-icon {
+						border-color: transparent;
+						background-color: $brand-green-pea;
+					}
+				}
+			}
+			
+			+ .price-checkboxes-group__item-content .price-checkboxes-group__item-content-icon {
+				border-color: transparent;
+				background: $brand-turquoise;
+				
+				.icon {
+					opacity: 1;
+				}
+			}
+		}
+		
+		.mod_no-touchevents & {
+
+			&:hover {
+
+				+ .price-checkboxes-group__item-content {
+					box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+				}
+				
+				+ .price-checkboxes-group__item-content .price-checkboxes-group__item-content-icon {
+					border-color: $color-base;
+				}
+			}
+		}
+		
+		.price-checkboxes-group--popover-modifier & {
+			
+			.mod_no-touchevents & {
+				
+				&:hover {
+					
+					+ .price-checkboxes-group__item-content {
+						background-color: $color-lightest-porcelain;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+		
+		.price-checkboxes-group--popover-modifier & {
+			&:focus {
+				+ .price-checkboxes-group__item-content {
+					background-color: $color-lightest-porcelain;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+	
+	&__item-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: all $transition-duration-base-min;
+	}
+
+	&__item-content-col {
+
+		&:not(.price-checkboxes-group__item-content-col--type) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__item-content-type {
+		font-weight: 500;
+		
+		@include mq(sx) {
+			@include text-base-big(500);
+		}
+		
+		@include mq(sx) {
+			display: flex;
+		}
+		
+		.price-checkboxes-group--popover-modifier & {
+			@include mq(sx) {
+				@include text-base(400);
+				
+				display: block;
+			}
+		}
+	}
+	
+	&__item-content-type-title,
+	&__item-content-type-value,
+	&__item-content-value {
+		
+		.price-checkboxes-group--popover-modifier & {
+			.rub {
+				@include text-base(400);
+			}
+		}
+		
+		.rub {
+			@include text-base-big(500);
+		}
+	}
+
+	&__item-content-type-title {
+
+	}
+
+	&__item-content-type-value {
+		&:not(:first-child) {
+			&::before {
+				@include mq(sx) {
+					content: "\00a0\00a0";
+				}
+			}
+			
+			.price-checkboxes-group--popover-modifier & {
+				&::before {
+					@include mq(sx) {
+						content: none;
+					}
+				}
+			}
+		}
+		
+		.rub {
+			font-weight: 400;
+		}
+	}
+
+	&__item-content-value {
+		@include text-base-big(700);
+
+		@include mq-custom(max, 360px) {
+			@include text-minimal(700);
+		}
+
+		&--sale {
+			color: $brand-grapefruit;
+		}
+	}
+
+	&__item-content-icon {
+		@include size(2rem);
+
+		margin-left: map_get($mq-container-indents, "sm");
+		min-width: map_get($mq-container-indents, "sm");
+		border-radius: 50%;
+		border: 1px solid $color-gray;
+		transition: all $transition-duration-base-min;
+
+		> .icon {
+			@include size(100%);
+
+			opacity: 0;
+			transition: opacity $transition-duration-base-min;
+		}
+	}
+}

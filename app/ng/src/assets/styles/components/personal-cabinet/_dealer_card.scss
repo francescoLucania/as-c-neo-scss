@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+.personal-cabinet-dealer-card {
+	padding: 10px calc(#{map_get($mq-container-indents, "sm")}  - 1px) 0; // border-width
+	border-radius: $border-radius-base;
+	background: #fff;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
+	transition: box-shadow $transition-duration-base-min;
+
+	&__header {
+		padding-bottom: map_get($mq-container-indents, "sm") / 2;
+	}
+	
+	&__header-description {
+		color: $color-lighter;
+	}
+	
+
+	&__header-title {
+		@include text-base-big(700);
+	}
+
+	&__description {
+		margin-top: 2px;
+		color: $color-lighter;
+	}
+
+	&__map-container {
+		position: relative;
+		margin-right: calc(#{-(map_get($mq-container-indents, "sm"))} + 1px);
+		margin-left: calc(#{-(map_get($mq-container-indents, "sm"))} + 1px);
+		height: 12.8rem;
+		background: $color-lightest;
+	}
+
+	&__map,
+	.sebm-google-map-container {
+		@include size(100%);
+
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__badge-block {
+		@include scroll-not-scrollbar();
+
+		margin-right: -1 * map_get($mq-container-indents, "sm");
+		margin-bottom: map_get($mq-container-indents, "sm");
+		margin-left: -1 * map_get($mq-container-indents, "sm");
+	}
+
+	&__badge-block-container {
+		display: inline-flex;
+		padding: 0 map_get($mq-container-indents, "sm");
+	}
+
+	&__information {
+		padding: map_get($mq-container-indents, "sm") 0;
+	}
+
+	&__information-status-line,
+	&__information-price-switch {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	&__information-status-line-button,
+	&__information-status-line-txt {
+		span {
+			@include text-base(500);
+		}
+	}
+	
+	&__information-status-line-button,
+	&__information-price-switch-button {
+		@include interact(text-decoration, underline);
+		
+		display: flex;
+		max-width: 50%;
+		text-align: left;
+		font-weight: 500;
+
+		&:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+		
+		&.is-active {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+		
+		span {
+			@include ellipsis(100%, block)
+		}
+		
+		.icon {
+			@include size(2rem);
+			
+			transition: $transition-duration-base-min;
+		}
+	}
+
+	&__complain-button {
+		@include interact(text-decoration, underline, "hover span");
+		
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+
+		span,
+		.icon {
+			
+			&:not(:first-child) {
+				margin-left: map_get($mq-container-indents, "sm") / 2;
+			}
+		}
+		
+		.icon {
+			@include size(2rem);
+
+			fill: $brand-grapefruit;
+		}
+
+		&:focus {
+			outline: none;
+			
+			span {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__information-price-total {
+		@include text-base-big(700);
+
+		margin-left: map_get($mq-container-indents, "sm");
+		white-space: nowrap;
+
+		&--sale {
+			color: $brand-grapefruit;
+		}
+		
+		.rub {
+			font-weight: 400;
+		}
+	}
+
+	&__information-status-line,
+	&__actions {
+		margin: 0 -1 * map_get($mq-container-indents, "sm");
+	}
+
+	&__information-status-line,
+	&__actions-item {
+		padding: 19px map_get($mq-container-indents, "sm") 20px;
+		border-top: 1px solid $color-n-lightest;
+		
+		&:last-child {
+			border-bottom-left-radius: $border-radius-base;
+			border-bottom-right-radius: $border-radius-base;
+		}
+	}
+
+	&__actions-item {
+		@include text-base-big(700);
+
+		position: relative; // for pointer
+		width: 100%;
+		transition: box-shadow $transition-duration-base-min;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.12);
+		}
+
+		.mod_no-touchevents & {
+
+			&:hover {
+				box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.12);
+			}
+		}
+	}
+
+	&__actions-item-pointer {
+		@include size(2rem);
+
+		position: absolute;
+		top: 50%;
+		right: map_get($mq-container-indents, "sm");
+		transform: translateY(-50%);
+	}
+}

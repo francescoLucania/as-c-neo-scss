@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+.as_c_chat {
+	background: #FFFFFF;
+	border: 1px solid $color-transparent-black;
+	box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+	border-radius: $border-radius-base $border-radius-base 0 0;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 160;
+	font-family: 'SF Pro Display', sans-serif;
+
+	&--size {
+		max-width: 42.4rem;
+		width: 100%;
+
+        @include mq(sx) {
+            width: 42.4rem;
+        }
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		height: map_get($mq-container-indents, "sx");
+		border-bottom: 1px solid #E6E7E8;
+		padding: 0 map_get($mq-container-indents, "sm");
+	}
+
+	&__header-side {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+	}
+
+	&__title {
+		@include text-base-big;
+
+		color: $color-base;
+		font-weight: bold;
+	}
+
+	&__on-map {
+		font-weight: 500;
+		cursor: pointer;
+		align-items: center;
+		display: none;
+
+		@include mq(sx) {
+			display: flex;
+		}
+	}
+
+	&__on-map-text {
+		margin-right: map_get($mq-container-indents, "sm");
+		margin-left: map_get($mq-container-indents, "sm") / 2;
+	}
+
+	&__area {
+		padding: 0 map_get($mq-container-indents, "sm");
+		overflow: auto;
+		height: 46rem;
+	}
+
+	&__date {
+		@include text-small(500);
+
+		margin-top: map_get($mq-container-indents, "sm");
+		text-align: center;
+	}
+
+	&__person {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: map_get($mq-container-indents, "sm");
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__user {
+		margin-bottom: map_get($mq-container-indents, "sm");
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__avatar {
+		@include size(3.2rem);
+		@include font(1.7rem, 2rem);
+
+		min-width: 3.2rem;
+		max-width: 3.2rem;
+		font-weight: 500;
+		color: #FFFFFF;
+		background: $brand-sky;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__wrapper {
+		padding-left: map_get($mq-container-indents, "sm") / 2;
+	}
+
+	&__cloud {
+		@include text-base-medium;
+
+		padding: 1.2rem map_get($mq-container-indents, "sm") / 2;
+		background: $color-lightest-popup;
+		border-radius: 1.8rem;
+		max-width: max-content;
+		position: relative;
+		color: $color-light;
+
+		&:not(:last-child) {
+			margin-bottom: 1px;
+		}
+
+		&:last-child {
+			border-radius: 1.8rem 1.8rem 1.8rem 0;
+
+			&:before {
+				content: '';
+				width: 8px;
+				height: 10px;
+				border: 8px solid transparent;
+				border-right: 8px solid $color-lightest-popup;
+				border-bottom: 8px solid $color-lightest-popup;
+				position: absolute;
+				left: -10px;
+				bottom: 0;
+				display: block;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+
+		&--user {
+			background: $brand-turquoise;
+			margin-left: auto;
+			color: #FFFFFF;
+
+			&:last-child {
+				border-radius: 1.8rem 1.8rem 0 1.8rem;
+
+				&:before {
+					content: '';
+					display: none;
+				}
+
+				&:after {
+					content: '';
+					width: 8px;
+					height: 10px;
+					border: 8px solid transparent;
+					border-left: 8px solid $brand-turquoise;
+					border-bottom: 8px solid $brand-turquoise;
+					position: absolute;
+					right: -10px;
+					bottom: 0;
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__name {
+		@include text-small(500);
+
+		color: $color-gray;
+	}
+
+	&__panel {
+		display: flex;
+		align-items: center;
+		padding: 0 map_get($mq-container-indents, "sm");
+		height: 6.8rem;
+	}
+
+	&__phone {
+		@include size(3.6rem);
+
+		min-width: 3.6rem;
+		max-width: 3.6rem;
+		background: #FFFFFF;
+		border: 1px solid $color-n-lightest;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+        cursor: pointer;
+
+		& .icon {
+			fill: #02C5AB;
+		}
+	}
+
+	&__message {
+		@include text-base-medium;
+
+		width: 304px;
+		height: 36px;
+		background: #FFFFFF;
+		border: 1px solid #E6E7E8;
+		border-radius: 36px;
+		outline: none;
+		color: $color-gray;
+		padding-left: 1rem;
+		margin: 0 map_get($mq-container-indents, "sm") / 2;
+
+		&::placeholder {
+			@include text-base-medium;
+
+			color: $color-gray;
+		}
+	}
+
+	&__send {
+		@include size(3.6rem);
+
+		min-width: 3.6rem;
+		max-width: 3.6rem;
+		background: $color-lightest-border2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+        cursor: pointer;
+
+		& .icon {
+			fill: #fff;
+			transform: rotate(-90deg);
+		}
+	}
+}

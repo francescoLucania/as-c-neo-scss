@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@if $enable-textareas == true {
+    .textarea {
+        > textarea {
+            @include text-base;
+
+            display: block;
+            padding: .8rem 1rem;
+            width: 100%;
+            min-height: 14rem;
+            line-height: 1.5;
+            color: $color-base;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 0 1px rgba(0, 0, 0, 0.09);
+            outline: none;
+            transition: box-shadow $transition-duration-base;
+
+            &::placeholder {
+                color: $color-placeholder;
+            }
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.11), 0 0 0 1px rgba(0, 0, 0, 0.11);
+            }
+
+            &:disabled {
+                opacity: .5;
+            }
+
+            @if $enable-jquery-ui-datepicker == true {
+                &.hasDatepicker {
+                    &.hasDatepickerFocus {
+                        // Styles
+                    }
+                }
+            }
+        }
+
+        &[data-icon="pencil"] {
+            position: relative;
+
+            > textarea {
+                padding-left: 4rem;
+            }
+
+            > .icon {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .n-feedback-comment-form & {
+                > textarea {
+                    @include header-offer-h3;
+
+                    min-height: auto;
+                    height: map_get($mq-container-indents, 'sx');
+                    padding: 1.6rem 3.2rem 1.6rem 6rem;
+
+                    @include mq-custom(max, 913px){
+                        @include mq(sx){
+                            line-height: 3.2rem;
+                        }
+                    }
+
+                    @include mq(sm){
+                        height: map_get($mq-container-indents, 'sm') * 2;
+                        padding: 1.1rem 3.2rem 1.1rem 3.2rem;
+                    }
+                }
+
+                > .icon {
+                    top: 2.2rem;
+                    left: 3.2rem;
+
+                    @include mq(sm){
+                        top: 1rem;
+                        left: .6rem;
+                    }
+                }
+
+                > .button {
+                    display:none;
+                    position: absolute;
+                    right: map_get($mq-container-indents, 'sx') / 2;
+                    bottom: map_get($mq-container-indents, 'sx') / 2;
+
+                    @include mq(sm){
+                        position: static;
+                        width: 100%;
+                        margin-top: map_get($mq-container-indents, 'sx') / 4;
+                        font-size: 1.8rem;
+                        padding-top: 1.5rem;
+                        padding-bottom: 1.5rem;
+                    }
+                }
+            }
+
+            .n-feedback-comment-form--active & {
+                > textarea {
+                    height: map_get($mq-container-indents, 'sx') * 3.25;
+                    padding-left: 3.2rem;
+
+                    @include mq(sm){
+                        padding: 1.6rem;
+                        height: map_get($mq-container-indents, 'sx') * 1.5;
+                    }
+                }
+
+                > .icon {
+                    display: none;
+                }
+
+                > .button {
+                    display: block;
+                }
+            }
+
+        }
+
+        &.textarea--invalid {
+            > textarea {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 0 1px $color-error;
+
+                &:hover,
+                &:focus {
+                    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.11), 0 0 0 1px $color-error;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,679 @@
+@charset "UTF-8";
+
+.main-site-header {
+	position: relative;
+	z-index: 155;
+	background: #fff;
+	font-family: "SF Pro Display", Arial, Helvetica, sans-serif;
+
+	@include mq-custom(max, 919px) {
+		background: #fff;
+	}
+
+
+	// modifications from the parent
+	[data-background="promo"] &,
+	[data-color-type="vtb"] &,
+	[data-color-type="gazprombank-blue"] &,
+	[data-background="gradient-dark"] &,
+	[data-background="gradient-medium-dark"] &,
+	[data-background="new-loyalty-program"] &,
+	.loyalty-program-header &,
+	// their modifications
+	&[data-background="color-light"] {
+
+		.main-site-header__menu-item a,
+		.main-site-header__menu-item button {
+			@include interact(fill, $brand-turquoise, 'hover .icon');
+
+			color: #fff;
+		}
+
+		.main-site-header__menu-item a .icon[data-compare],
+		.main-site-header__menu-item a .icon[data-compare],
+		.main-site-header__menu-item button .icon[data-compare],
+		.main-site-header__menu-item a .icon[data-compare],
+		.main-site-header__menu-item button[data-type="open-popup"] .icon,
+		.main-site-header__menu-item a .icon[data-phone],
+		.main-site-header__menu-item button .icon[data-phone],
+		.main-site-header__menu-item a .icon[data-region],
+		.main-site-header__menu-item button .icon[data-region],
+		.main-site-header__menu-item a .icon[data-search],
+		.main-site-header__menu-item button .icon[data-search],
+		.main-site-header__burger-button .icon {
+			fill: #fff;
+			transition: fill $transition-duration-base-min !important;
+		}
+
+		.main-site-header__menu-item a {
+			@include interact(color, #ffffff, "hover .number");
+
+			&[data-compare] .number {
+				color: $color-base;
+			}
+		}
+
+		.main-site-header__menu-item a.tooltip-link::after,
+		.main-site-header__menu-item a.popup-tooltip-button::after,
+		.main-site-header__menu-item button.tooltip-link::after,
+		.main-site-header__menu-item button.popup-tooltip-button::after {
+			border-top-color: #fff;
+			transition: all $transition-duration-base-min !important;
+
+			.mod_no-touchevents & {
+
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-site-header__mobile-menu-item a,
+		.main-site-header__mobile-menu-item button {
+			color: #fff;
+		}
+	}
+
+	[data-background="gradient-dark"] &,
+	[data-background="gradient-medium-dark"] & {
+		@include mq-custom(max, 919px) {
+			background: $color-light;
+			border-color: rgba(255, 255, 255, 0.1);
+		}
+	}
+
+
+	.loyalty-program-header & {
+		@include mq-custom(max, 919px) {
+			background: #6D7175;
+		}
+
+		.container {
+			max-width: none;
+		}
+	}
+
+	.loyalty-program-header & {
+		background: $brand-steelblue;
+	}
+
+	[data-color-type="vtb"] & {
+		background: $brand-vtb-blue;
+	}
+
+	[data-color-type="gazprombank-blue"] & {
+		background: $brand-gazprom-blue;
+	}
+
+	[data-background="promo"] &,
+	[data-background="gradient-dark"] & {
+		@include mq-custom(max, 920px) {
+			background: $color-light;
+		}
+
+		@include mq-custom(min, 921px) {
+			background: transparent;
+		}
+	}
+
+	&[data-background="color-light"] {
+		background: $color-light;
+		
+		
+		+ .main-breadcrumbs {
+
+			&:not(:first-child) {
+				@include mq-custom(min, 921px) {
+					margin-top: map_get($mq-container-indents, "sm");
+				}
+			}
+		}
+		
+		+ router-outlet + div[data-app-page-name] .main-breadcrumbs {
+			background-color: transparent;
+			
+			@include mq-custom(min, 921px) {
+				margin-top: map_get($mq-container-indents, "sm");
+			}
+			
+			[data-background="new-loyalty-program"] & {
+				@include mq-custom(min, 921px) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	
+	[data-background="new-loyalty-program"] & {
+		background: $brand-steelblue-light;
+	}
+
+	.container {
+		@include mq-custom(max, 767px) {
+			padding-right: map_get($mq-container-indents, "sm");
+			padding-left: map_get($mq-container-indents, "sm");
+		}
+	}
+
+	+ .main-breadcrumbs {
+
+		&:not(:first-child) {
+			margin-top: 0;
+		}
+	}
+
+	&__base-container {
+		padding: 14px 0;
+
+		@include mq(sx) {
+			padding-top: map_get($mq-container-indents, "sx") / 2;
+			padding-bottom: calc(#{map_get($mq-container-indents, "sx") / 2} - 1px); // border-bottom: 1px
+		}
+	}
+
+	&__mobile-container {
+		margin-bottom: map_get($mq-container-indents, "sx") / 4;
+
+		@include mq(sx) {
+			display: none;
+		}
+	}
+
+	&__navigate {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		margin-right: map_get($mq-container-indents, "sx") / 2;
+		min-width: 105px;
+		width: 105px;
+
+		@include mq(sx) {
+			min-width: 125px;
+			width: 125px;
+		}
+
+		// body modifications
+		[data-background="promo"] &,
+		[data-color-type="vtb"] &,
+		[data-color-type="gazprombank-blue"] &,
+		[data-background="gradient-dark"] &,
+		[data-background="gradient-medium-dark"] &,
+		.loyalty-program-header &,
+		// .main-site-header modifications
+		[data-background="color-light"] & {
+
+			> img {
+				@include mq(sx) {
+					transform: translateY(-.1rem);
+				}
+
+				&[data-color="white"] {
+					display: block;
+				}
+
+				&[data-color="black"] {
+					display: none;
+				}
+
+			}
+		}
+
+		[data-color-type="vtb"] &,
+		[data-color-type="gazprombank-blue"] & {
+			display: flex;
+			align-items: center;
+		}
+
+		> img {
+			//transform: translateY(0rem);
+			display: block;
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+
+			&[data-color="white"] {
+				display: none;
+			}
+
+			&[data-color="black"] {
+				display: block;
+			}
+
+			.mod_flexboxtweener & {
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	&__cobr-logo {
+		@include font(1.3rem, 1.3rem);
+
+		transform: translateY(0.1rem);
+		display: flex;
+		align-items: center;
+		margin-left: map_get($mq-container-indents, "sx") / 4;
+		height: 0;
+		font-weight: 800;
+
+		@include mq(lg) {
+			@include font(1.6rem, 1.6rem);
+		}
+
+		&::before {
+			margin-right: .8rem;
+			background: {
+				position: 50%;
+				size: contain;
+				repeat: no-repeat;
+			};
+			content: "";
+		}
+
+		[data-color-type="gazprombank-blue"] & {
+            margin-bottom: .4rem;
+
+            &::before {
+				width: 6rem;
+				height: 3.2rem;
+				background-image: url(../img/bank-logo/+gazprombank.svg);
+
+				@include mq(sx) {
+					width: 17rem;
+					height: 3.2rem;
+					background-image: url(../img/bank-logo/++gazprombank.svg);
+				}
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+	}
+
+	&__menu-item {
+		display: block;
+		font-size: 0;
+		line-height: 1;
+		white-space: nowrap;
+
+		@include mq(sx) {
+			@include mq-custom(max, 1195px) {
+				display: none;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: map_get($mq-indents, "sm");
+		}
+
+		&:not(.main-site-header__menu-item--all-breakpoints) {
+			@include mq(sm) {
+				display: none;
+			}
+		}
+
+		[data-color-type="vtb"] &,
+		[data-color-type="gazprombank-blue"] & {
+			&:not(.main-site-header__menu-item--all-breakpoints) {
+				@include mq(sx) {
+					@include mq-custom(max, 1280px) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&:not(.main-site-header__menu-item--base),
+		&:not(.main-site-header__menu-item--all-breakpoints) {
+			@include mq(sx) {
+				@include mq-custom(max, 1195px) {
+					display: none;
+				}
+			}
+		}
+
+		&.main-site-header__menu-item--base,
+		&.main-site-header__menu-item--all-breakpoints {
+			@include mq(sx) {
+				@include mq-custom(max, 1195px) {
+					display: block;
+				}
+			}
+		}
+
+		&[data-mq-custom-step] {
+			display: none;
+		}
+
+		&.main-site-header__menu-item--not-mobile {
+			display: block;
+
+			@include mq(sm) {
+				display: none;
+			}
+		}
+
+		&[data-mq-custom-step="1"] {
+			@include mq-custom(min, 833px) {
+				display: block;
+			}
+		}
+
+		&[data-mq-custom-step="2"] {
+			@include mq-custom(min, 966px) {
+				display: block;
+			}
+		}
+
+		&[data-mq-custom-step="3"] {
+			@include mq-custom(min, 1047px) {
+				display: block;
+			}
+		}
+
+		&[data-mq-custom-step="4"] {
+			@include mq-custom(min, 1133px) {
+				display: block;
+			}
+		}
+
+		&[data-mq-custom-step="5"] {
+			@include mq-custom(min, 1207px) {
+				display: block;
+			}
+		}
+
+		&[data-mq-custom-step="6"] {
+			@include mq-custom(min, 1261px) {
+				display: block;
+			}
+		}
+
+		&[data-mq-custom-step="7"] {
+			@include mq-custom(min, 1411px) {
+				display: block;
+			}
+		}
+
+		a,
+		button {
+			position: relative;
+
+			&:not([data-icon]),
+			&:not([class]) {
+				@include text-base(500);
+				@include interact(text-decoration, underline);
+
+				transition: text-decoration $transition-duration-base-min;
+			}
+
+			&:focus {
+				outline: none;
+				text-decoration: underline;
+				color: $brand-turquoise;
+			}
+
+			&[data-icon] {
+				font-size: 0; // text for vox
+
+				&[data-phone] {
+
+					@include mq(lg) {
+						@include font(1.6rem, 1.6rem);
+					}
+				}
+			}
+
+			&[data-type="open-popup"] {
+				padding-right: 2rem;
+
+				&:focus {
+
+					.icon {
+						fill: $brand-turquoise;
+					}
+				}
+
+				.icon {
+					@include size(2rem);
+
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%) rotate(0);
+					transition: transform $transition-duration-base-min;
+					fill: $color-base;
+					content: "";
+
+					.is-active &,
+					.is-open & {
+						transform: translateY(-50%) rotate(180deg);
+					}
+				}
+			}
+
+			&[data-compare] {
+				@include size(2rem);
+				@include interact(fill,$brand-turquoise, "hover .icon");
+
+				position: relative;
+				display: block;
+
+				.number {
+					@include size(1.3rem);
+					@include font(0.9rem, 1.5rem);
+
+					position: absolute;
+					bottom: 1px;
+					left: 0;
+					font-weight: 700;
+					color: #ffffff;
+					text-align: center;
+
+					@include mq(lg) {
+						@include font(0.9rem, .8rem);
+
+						bottom: -3px;
+						width: 1.5rem;
+					}
+				}
+			}
+
+			&[data-counter] {
+				position: relative;
+
+				&::after {
+					@include font(1.4rem, 1.4rem);
+
+					position: absolute;
+					top: 0;
+					right: 0;
+					transform: translate(50%, -100%);
+					padding: .3rem .6rem;
+					border-radius: 10px;
+					background: $brand-sky;
+					font-weight: 500;
+					color: #fff;
+					content: attr(data-counter);
+
+					[data-color-type="vtb"] & {
+						background: $brand-vtb-red;
+					}
+				}
+			}
+
+			.icon {
+
+				&[data-compare] {
+					@include size(2rem);
+
+					fill: $color-base;
+
+					@include mq(lg) {
+						@include size(2rem);
+					}
+				}
+
+				&[data-favourites] {
+					@include size(2.1rem, 2rem);
+
+					fill: $brand-grapefruit;
+
+					@include mq(lg) {
+						@include size(2.5rem, 2.4rem);
+					}
+				}
+
+				&[data-gift] {
+					position: absolute;
+					top: 0;
+					right: 0;
+					transform: translate(50%, -2.1rem);
+
+					@include mq(lg) {
+						transform: translate(1.6rem, -2.1rem);
+					}
+
+					.white {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+			}
+		}
+	}
+
+	&__burger-button {
+		@include size(2rem);
+		@include interact(fill, $brand-turquoise, "hover .icon");
+
+		display: block;
+
+		.icon {
+			@include size(100%);
+
+			transition: $transition-duration-base-min;
+		}
+
+		&:focus {
+			outline: none;
+
+			.icon {
+				fill: $brand-turquoise;
+			}
+		}
+	}
+
+	&__phone-button,
+	&__region-button {
+		@include interact(fill, $brand-turquoise, "hover .icon");
+		@include interact(text-decoration, underline);
+
+		display: flex;
+		align-items: center;
+
+		.icon {
+			@include size(2rem);
+
+			margin-right: 4px;
+		}
+	}
+
+	&__phone-button {
+
+		span {
+			@include mq(sm) {
+				display: none;
+			}
+		}
+	}
+
+	&__region-button {
+		@include interact(fill, $brand-turquoise, "hover .icon");
+		@include interact(text-decoration, underline);
+
+		display: flex;
+
+		span {
+			@include text-base(500);
+			@include ellipsis(150px, block);
+		}
+
+		.icon {
+			@include size(2rem);
+		}
+	}
+
+	&__search-button {
+		@include interact(fill, $brand-turquoise, "hover .icon");
+		@include interact(text-decoration, underline);
+
+		.icon {
+			@include size(2rem);
+		}
+	}
+
+	&__mobile-menu-container {
+		@include scroll-not-scrollbar;
+
+		margin: 0 -1 * map_get($mq-container-indents, "sm");
+		padding-top: map_get($mq-container-indents, "sx") / 4;
+		max-width: calc(100% + #{map_get($mq-container-indents, "sm") * 2});
+	}
+
+	&__mobile-menu {
+		display: inline-flex;
+		padding: 0 map_get($mq-container-indents, "sm");
+	}
+
+	&__mobile-menu-item {
+		padding: 2px calc(#{map_get($mq-container-indents, "sm")} - 2px); // border 2px
+		border-radius: 16px;
+		border: 1px solid $color-n-lightest;
+
+		&:not(:last-child) {
+			margin-right: map_get($mq-container-indents, "sm") / 3;
+		}
+
+		a,
+		button {
+			@include font(1.4rem, 2.4rem);
+
+			position: relative;
+			white-space: nowrap;
+
+			.icon {
+
+				&[data-compare] {
+					@include size(2rem);
+
+					fill: $color-base;
+				}
+
+				&[data-gift] {
+					position: absolute;
+					top: .5rem;
+					right: -1rem;
+					transform: translate(50%, -2.1rem);
+
+					@include mq(lg) {
+						transform: translate(1.6rem, -2.1rem);
+					}
+
+					.white {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+			}
+		}
+	}
+}

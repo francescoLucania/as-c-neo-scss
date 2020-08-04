@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+.base-alert {
+	position: fixed;
+	z-index: 9999;
+	display: block;
+	padding-left: map_get($mq-container-indents, "sm");
+	background: $color-base;
+	color: #fff;
+	overflow: hidden;
+	
+	&.is-open {
+		display: inline-block;
+	}
+	
+	@include mq(sm) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: auto;
+		left: 0;
+		padding-left: map_get($mq-container-indents, "sm");
+	}
+	
+	@include mq(sx) {
+		bottom: map_get($mq-container-indents, "sm");
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 63.2rem;
+		border-radius: $border-radius-base;
+	}
+	
+	&__body {
+		display: flex;
+	}
+	
+	&__message {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-bottom: -(map_get($mq-container-indents, "sm") / 2);
+		padding: 10px map_get($mq-container-indents, "sm") 10px 0;
+		font-weight: 500;
+		
+		> div,
+		> button {
+			margin-bottom: map_get($mq-container-indents, "sm") / 2;
+		}
+	}
+	
+	&__message-container {
+		margin-right: map_get($mq-container-indents, "sm");
+	}
+	
+	//&__actions-base-group,
+	&__close-button {
+		padding: map_get($mq-container-indents, "sm") - 6px 0;
+		
+		@include mq(sm) {
+			padding: map_get($mq-container-indents, "sm") - 2px 0;
+		}
+	}
+	
+	&__actions {
+		display: flex;
+		
+		a,
+		button {
+			@include interact(color, $brand-turquoise);
+			
+			&:focus {
+				color: $brand-turquoise;
+				outline: none;
+			}
+		}
+	}
+	
+	&__actions-base-group {
+		display: flex;
+	}
+	
+	&__base-action {
+		@include interact(text-decoration, underline);
+		
+		position: relative;
+		font-weight: 700;
+		
+		&:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+		
+		&::before {
+			@include size(calc(100% + 8px));
+			
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+	
+	&__close-button {
+		@include size(48px, auto);
+		
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+		transition: color $transition-duration-base-min;
+		
+		@include mq(sx) {
+			@include size(40px);
+			
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 1px;
+				background: $color-light;
+			}
+		}
+		
+		.mod_no-touchevents & {
+			
+			&:hover {
+				
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+		
+		&::after {
+			@include size(2.4rem);
+			
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 0;
+			border-radius: 50%;
+			background-color: $color-light;
+			opacity: 0;
+			transition: opacity $transition-duration-base-min;
+			content: "";
+		}
+		
+		.icon {
+			@include size(2rem);
+			
+			position: relative;
+			z-index: 1;
+			fill: #fff;
+		}
+	}
+}

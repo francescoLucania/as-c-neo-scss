@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+.information-tab {
+	padding: map_get($mq-container-indents, "sm");
+	border-radius: $border-radius-base;
+	background-color: #fff;
+	box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
+	
+	@include mq(sm-md) {
+		padding: map_get($mq-container-indents, "sx") / 2;
+	}
+	
+	&--box-shadow-none {
+		box-shadow: none;
+	}
+	
+	&__title {
+		@include as-c-header-h4;
+		
+		margin-bottom: map_get($mq-container-indents, "sm");
+		
+		@include mq(sm-md) {
+			margin-bottom: map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+	
+	&__content-block {
+	
+	}
+	
+	&__footer {
+		margin: {
+			top: map_get($mq-container-indents, "sm");
+			right: -1 * map_get($mq-container-indents, "sm");
+			bottom: -1 * map_get($mq-container-indents, "sm");
+			left: -1 * map_get($mq-container-indents, "sm");
+		};
+		padding: {
+			top: calc(#{map_get($mq-container-indents, "sm")} - 1px);
+			right: map_get($mq-container-indents, "sm");
+			bottom: map_get($mq-container-indents, "sm");
+			left: map_get($mq-container-indents, "sm");
+		};
+		border-top: 1px solid $color-n-lightest;
+		color: $color-light;
+		
+		@include mq(sm-md) {
+			margin: {
+				top: map_get($mq-container-indents, "sx") / 2;
+				right: -1 * map_get($mq-container-indents, "sx") / 2;
+				bottom: -1 * map_get($mq-container-indents, "sx") / 2;
+				left: -1 * map_get($mq-container-indents, "sx") / 2;
+			};
+			padding: {
+				right: map_get($mq-container-indents, "sx") / 2;
+				left: map_get($mq-container-indents, "sx") / 2;
+			};
+		}
+	}
+}

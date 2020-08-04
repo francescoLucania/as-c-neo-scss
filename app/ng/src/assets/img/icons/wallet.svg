@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="24.698" height="18.681" y="10.119" fill="#1A1A1A" rx="3.113"/>
+        <ellipse cx="10.998" cy="10.703" fill="#FFBB03" rx="3.666" ry="3.697"/>
+        <rect width="24.698" height="18.681" y="12.454" fill="#2898BC" fill-rule="nonzero" rx="3.113"/>
+        <ellipse cx="19.681" cy="21.794" fill="#FFF" rx="1.544" ry="1.557"/>
+        <ellipse cx="17.173" cy="3.697" fill="#FFBB03" rx="3.666" ry="3.697"/>
+    </g>
+</svg>

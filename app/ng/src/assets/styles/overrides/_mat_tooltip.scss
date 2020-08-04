@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.mat-tooltip {
+	@include text-base();
+	
+	padding: 2px map_get($mq-container-indents, "sm") / 2 !important;
+	border-radius: $border-radius-min;
+	border: 1px solid rgba(26, 26, 26, 0.07);
+	background: #fff;
+	color: $color-base !important;
+	box-shadow: 0 12px 12px rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.regions-label-checkbox {
+    @include interact(text-decoration, underline, "hover .regions-label-checkbox__label");
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__input {
+        @include size(100%);
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked {
+            + .regions-label-checkbox__icon {
+                background-image: url(../img/icons/checkbox-20.svg);
+            }
+        }
+
+        &[data-id="0"] {
+            + .regions-label-checkbox__icon {
+                background-image: url(../img/icons/close-20.svg);
+            }
+
+            &:checked {
+                + .regions-label-checkbox__icon {
+                    background-image: url(../img/icons/checkbox-20.svg);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @include size(2rem);
+
+        margin-right: map_get($mq-container-indents, "sm");
+        background: {
+            position: 50%;
+            size: contain;
+            repeat: no-repeat;
+        };
+    }
+
+    &__label {
+        @include ellipsis(100%, block);
+        @include text-base-big(500);
+    }
+
+}

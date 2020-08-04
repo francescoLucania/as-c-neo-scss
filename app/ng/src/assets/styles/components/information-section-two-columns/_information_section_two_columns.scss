@@ -1,0 +1,507 @@
+@charset "UTF-8";
+
+.information-section-two-columns {
+
+	@include mq(sx) {
+		@include mq-custom(max, 767px) {
+			margin-right: -1 * map_get($mq-container-indents, "sx") + map_get($mq-container-indents, "sm");
+			margin-left: -1 * map_get($mq-container-indents, "sx") + map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&--padding {
+		padding: map_get($mq-container-indents, "sx")/2 0 map_get($mq-container-indents, "sm");
+
+		@include mq(sm-md) {
+			padding: map_get($mq-container-indents, "sx")/2 0;
+		}
+	}
+
+	&--green-bg {
+		background: $brand-turquoise;
+	}
+
+	&__grid {
+		@include mq(sm-md) {
+			display: flex;
+			align-items: flex-start;
+			margin-right: -1 * map_get($mq-container-indents, "sx") / 2;
+			margin-left: -1 * map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+
+	// columns
+
+	&__sticky-action,
+	&__static-information {
+
+		&:not(:last-child) {
+			@include  mq-custom(max, 767px) {
+				margin-bottom: map_get($mq-container-indents, "sx") / 2;
+			}
+		}
+
+		@include mq(sm-md) {
+			flex: 0 0 50%;
+			padding-right: map_get($mq-container-indents, "sx") / 2;
+			padding-left: map_get($mq-container-indents, "sx") / 2;
+			max-width: 50%;
+			width: 50%;
+		}
+
+		&--no-margin-bottom {
+			margin-bottom: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__sticky-action {
+		@include mq(sm-md) {
+			position: sticky;
+			top: 50vh;
+		}
+
+		&--sticky-top {
+			@include mq(sx) {
+				top: map_get($mq-container-indents, "sx") / 2;
+			}
+		}
+	}
+
+	&__information-item {
+		&:not(:last-child) {
+			margin-bottom: map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&__information-item-action {
+		margin-top: map_get($mq-container-indents, "sx") / 2;
+	}
+
+	&__information-item-action-description {
+		margin-bottom: map_get($mq-container-indents, "sm");
+		text-align: center;
+		color: $color-lighter;
+	}
+
+	&__name {
+		@include font(2.8rem, 3.2rem);
+
+		order: 1;
+		margin: 0 0 0.4rem;
+
+		@include mq(sx) {
+			@include font(4rem, 4.4rem);
+			order: 2;
+
+			margin: map_get($mq-container-indents, "sx") / 2 0 0.4rem;
+		}
+	}
+
+	&__sales {
+		position: relative;
+		display: inline-block;
+		margin-bottom: map_get($mq-container-indents, "sm");
+		padding: 0.6rem 3.6rem 0.6rem map_get($mq-container-indents, "sm") ;
+		border-radius: map_get($mq-container-indents, "sm");
+		background: $brand-grapefruit;
+		color: #fff;
+
+		&:after {
+			@include size(1rem, 0.6rem);
+			position: absolute;
+			top: 50%;
+			right: 2.1rem;
+			transform: translateY(-50%);
+			display: block;
+			background: url("../img/white-arrow.svg") no-repeat;
+
+			content: "";
+		}
+	}
+
+	&__btn {
+		@include text-base-big();
+
+		display: block;
+		width: 100%;
+		height: map_get($mq-container-indents, "sx");
+		border-radius: 0 0 $border-radius-base $border-radius-base;
+		border-top: 1px solid $color-n-lightest;
+		background: #fff;
+		font-weight: bold;
+	}
+
+	&__list-item {
+		position: relative;
+		padding-left: map_get($mq-container-indents, "sm");
+
+		&:before {
+			@include size(0.4rem);
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			display: block;
+			border-radius: 50%;
+			background: $brand-turquoise;
+
+			content: "";
+		}
+	}
+
+	&__insurance {
+
+		&:not(:last-child) {
+			margin-bottom: map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&__header {
+		padding: map_get($mq-container-indents, "sx") /2 map_get($mq-container-indents, "sm");
+
+		@include mq(sx) {
+			padding: map_get($mq-container-indents, "sx") /2 map_get($mq-container-indents, "sm");
+		}
+
+		&-title {
+			@include font(2.1rem, 2.4rem);
+
+			margin-bottom: 0.4rem;
+
+			@include mq(sx) {
+				@include font(2.8rem, 3.2rem);
+			}
+		}
+
+		&-text {
+			@include font(1.6rem, 2rem);
+
+			@include mq(sx) {
+				@include font(1.8rem, 2.4rem);
+			}
+		}
+	}
+
+	&__subtitle {
+		@include font(1.6rem, 2rem);
+
+		order: 2;
+		margin: 0 0 map_get($mq-container-indents, "sx") / 2;
+
+		@include mq(sx) {
+			@include font(1.8rem, 2.4rem);
+
+			order: 3;
+			margin: 0;
+		}
+	}
+
+	&__img {
+		order: 3;
+
+		@include mq(sx) {
+			order: 1;
+		}
+	}
+
+	// elements
+	&__content {
+
+		@include mq-custom(max, 767px) {
+			padding-right: map_get($mq-container-indents, "sm");
+			padding-left: map_get($mq-container-indents, "sm");
+		}
+
+		@include mq(sm-md) {
+			margin: 0 auto;
+			max-width: 37rem;
+			text-align: center;
+		}
+
+		&--flex {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&--no-margin-bottom {
+			margin-bottom: 0;
+		}
+	}
+
+	&__static-information-item {
+
+		&:not(:first-child) {
+			margin-top: map_get($mq-container-indents, "sx") / 2;
+
+			@include mq(sm-md) {
+				margin-top: map_get($mq-container-indents, "sx");
+			}
+		}
+	}
+
+	&__title,
+	&__description {
+		@include mq(sm) {
+			padding-right: map_get($mq-container-indents, "sm");
+			padding-left: map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&__title {
+
+		&:not(:last-child) {
+			margin-bottom: map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&__description {
+		color: $color-light;
+
+		&:not(:last-child) {
+			margin-bottom: map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+
+	&__title {
+		@include header-h1;
+	}
+
+	&__action-block {
+		display: none;
+
+		@include mq(sm-md) {
+
+			&:not(.information-section-two-columns__action-block--footer-type) {
+				display: block;
+			}
+		}
+
+		.button {
+			@include mq(sm-md) {
+				min-width: 30.4rem;
+			}
+		}
+
+		&--footer-type {
+			margin-top: map_get($mq-container-indents, "sx") / 2;
+
+			@include mq-custom(max, 767px) {
+				display: block;
+			}
+
+			.button {
+				@include mq-custom(max, 767px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&__action-block-warning {
+		@include text-small;
+
+		margin-top: map_get($mq-container-indents, "sm");
+		text-align: center;
+		color: $color-lighter;
+	}
+
+	// slider & slick overrides
+
+	&__slider-container {
+
+		@include mq-custom(max, 767px) {
+
+			@include scroll-not-scrollbar(auto, hidden);
+
+			margin: -1 * map_get($mq-container-indents, "sx") / 2 -1 * map_get($mq-container-indents, "sm");
+			padding: map_get($mq-container-indents, "sx") / 2 map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&__slider {
+		margin-top: -1 * map_get($mq-container-indents, "sm") / 2;
+		margin-bottom: -1 * map_get($mq-container-indents, "sx") / 2; // compensate for the shadow
+
+		@include mq-custom(max, 767px) {
+			display: inline-flex;
+		}
+
+		@include mq(sm-md) {
+			margin-right: -1 * map_get($mq-container-indents, "sx") / 2 - 12px; // compensate for the shadow
+			margin-left: -1 * map_get($mq-container-indents, "sx") / 2 - 12px; // compensate for the shadow
+			padding-right: map_get($mq-container-indents, "sx") / 2;
+			padding-left: map_get($mq-container-indents, "sx") / 2;
+		}
+
+		.slick-list {
+			margin-right: -1 * map_get($mq-container-indents, "sm");
+			margin-left: -1 * map_get($mq-container-indents, "sm");
+			padding-right: map_get($mq-container-indents, "sm");
+			padding-left: map_get($mq-container-indents, "sm");
+
+			@include mq(sm) {
+				overflow: hidden;
+			}
+
+			@include mq(sm-md) {
+				@include  mq-custom(max, 767px) {
+					margin-right: -1 * map_get($mq-container-indents, "sx");
+					margin-left: -1 * map_get($mq-container-indents, "sx");
+					padding-right: map_get($mq-container-indents, "sx");
+					padding-left: map_get($mq-container-indents, "sx");
+				}
+
+				@include mq(sm-md) {
+					margin-right: 0;
+					margin-left: 0;
+					padding-right: 0;
+					padding-left: 0;
+				}
+			}
+
+		}
+
+		.slick-track {
+			display: flex;
+		}
+
+		.slick-slide {
+			display: block;
+			outline: none;
+
+			&:not(:last-child) {
+				@include mq(sm) {
+					margin-right: map_get($mq-container-indents, "sm");
+				}
+			}
+
+			@include mq(sx) {
+				margin: 0 12px; // 12 - compensate for the shadow
+			}
+		}
+
+		.as-c-slick-arrow {
+			@include interact(background-color, $color-placeholder);
+
+			top: calc(50% - 16px); // magic
+			border: 0;
+			background-color: $color-lightest;
+			box-shadow: none !important;
+
+			&:focus {
+				background-color: $color-placeholder;
+
+				.icon {
+					@include size(2rem);
+
+					fill: #fff;
+				}
+			}
+
+			&.slick-prev {
+				left: 0;
+			}
+
+			&.slick-next {
+				right: 0;
+			}
+
+			.icon {
+				@include size(2rem);
+
+				fill: #fff;
+			}
+		}
+
+		.slick-dots {
+			position: absolute;
+			right: 0;
+			bottom: 24px;
+			left: 0;
+			transform: translateY(100%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			> li {
+				@include size(.6rem);
+
+				display: block;
+				line-height: 1;
+
+				&:not(:last-child) {
+					margin-right: map_get($mq-container-indents, "sm") / 2;
+				}
+
+				&.slick-active {
+
+					> button {
+						background: $color-base;
+					}
+				}
+
+				> button {
+					@include size(100%);
+
+					display: block;
+					border-radius: 50%;
+					background: $color-lightest;
+					font-size: 0;
+
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+		}
+	}
+
+	.slick-slide {
+		display: flex;
+		flex-direction: column;
+		height: auto !important;
+		float: none !important;
+
+		@include mq-custom(max, 767px) {
+			max-width: 25.6rem;
+		}
+	}
+
+	.slick-slide > div,
+	&__slider-column {
+		flex-shrink: 0;
+		flex-grow: 1;
+		display: flex !important; // slick overrides
+		flex-direction: column;
+
+		.trade-in-card {
+			flex-shrink: 0;
+			flex-grow: 1;
+			display: flex;
+
+			@include mq-custom(max, 767px) {
+				flex-direction: column;
+			}
+		}
+	}
+
+	&__slider-column {
+		padding-top: 8px;
+		padding-bottom: map_get($mq-container-indents, "sx") / 2;
+
+		&:not(:last-child) {
+			@include mq-custom(max, 767px) {
+				margin-right: map-get($mq-container-indents, "sm");
+			}
+		}
+
+		@include mq-custom(max, 767px) {
+			min-width: 25.6rem;
+			max-width: 25.6rem;
+		}
+	}
+}

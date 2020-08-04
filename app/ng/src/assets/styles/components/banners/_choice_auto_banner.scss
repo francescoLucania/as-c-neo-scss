@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.choice-auto-banner {
+	padding: map_get($mq-container-indents, "sx") / 2;
+	border-radius: $border-radius-base;
+	background: #fff;
+	text-align: center;
+
+	&__title {
+		@include text-base-big(700);
+	}
+
+	&__action-container {
+		margin-top: map_get($mq-container-indents, "sx") / 2;
+
+		.button {
+			@include mq(sm) {
+				width: 100%;
+			}
+
+			@include mq(sx) {
+				min-width: 29.2rem;
+			}
+		}
+	}
+}

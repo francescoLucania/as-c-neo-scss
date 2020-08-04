@@ -1,0 +1,78 @@
+@charset "UTF-8"; // ставим всегда
+
+.block {
+	@include header-offer-h3;
+	@include interact(max-width, 12.2rem);
+	// !! внутри блоков новые блоки не объявляем, это сложнее читается
+	// Первыми всегда includes (это сделано для гибкости ,иногда что то в миксинах надо переопределить)
+	// исключениe @include mq(...) { }
+	// После include желательно оставлять пустую строку
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 144rem;
+	// После includes общие стили для всех брекпоинтов,
+	// если таких нет - делаем по принципу “mobile first” - сначала стили для мобилки, (sm,xs,md,lg...)
+
+	&:first-child {
+		// псевдо-классы
+	}
+
+	// брекпоинты по возрастанию
+	@include mq(sm) {
+
+	}
+
+	@include mq(sx) {
+
+	}
+
+	@include mq-custom(min, 700px) {
+		@include mq-custom(max, 912px) {
+
+		}
+	}
+
+	@include mq-custom(max, 912px) {
+
+	}
+
+	@include mq(md) {
+
+	}
+
+	@include mq(lg) {
+
+	}
+
+	@include mq(xl) {
+
+	}
+
+	// &:before,
+	// &:after
+
+	&:before,
+	&:after {
+		content: "lala"
+	}
+
+	&.block--mod {
+		// объявляем модификаторы если есть
+	}
+
+	&.class {
+		// модификатор по классу-хэлперу (.is-md, .hide и т. д.)
+	}
+
+	.class & {
+		// модификатор по классу модернайзера или родителя (например .mod_no-flexboxtweener, .mod_object-fit, .feedback-page и т. д. )
+	}
+
+	&__elements {
+		// далее объявляем элементы
+		// порядок инклюдов/свойств и тд - аналогичный
+		// !! внутри элементов новые элементы не объявляем, это сложнее читается
+	}
+}
