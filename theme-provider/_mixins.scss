@@ -371,7 +371,8 @@
 		}
 	}
 
-	&[data-brand-name="lada"] {
+	&[data-brand-name="lada"],
+	&[data-brand-name="vaz"] {
 
 		&::before {
 			background-image: url("../img/as-c-brand-logo/lada.png");
