@@ -34,5 +34,5 @@ export const CarOrderCardBase = () => ({
   component: CarOrderCard,
   props: {
     currentAuto: data,
-  },
+  }
 });
