@@ -31,6 +31,10 @@
 		&--select-type,
 		&--pencil-icon {
 
+			.as-n-c-input-box__tag-container {
+				position: relative;
+			}
+
 			.icon {
 				@include size(2rem);
 
@@ -57,6 +61,8 @@
 
 					&.ng-invalid {
 
+						color: $color-error;
+
 						&::placeholder {
 							color: $color-error;
 						}
@@ -67,7 +73,8 @@
 					}
 				}
 
-				.is-invalid.is-error & {
+				.ng-invalid.is-error & {
+
 					&::placeholder {
 						color: $color-error;
 					}
@@ -279,9 +286,8 @@
 				}
 
 				.ng-invalid.is-error & {
-					//color: $color-error;
 
-					&.ng-invalid, {
+					&.ng-invalid {
 
 						&::placeholder {
 							color: $color-error;
