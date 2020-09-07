@@ -267,6 +267,10 @@
 		}
 	}
 
+	&--filters-used {
+		background: $color-lightest-border;
+	}
+
 	&__root-list-container {
 		position: relative;
 		z-index: 10;
