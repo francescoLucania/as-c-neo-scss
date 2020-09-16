@@ -801,6 +801,14 @@
 		&:not(:first-child) {
 			border-top: none;
 		}
+
+		position: relative;
+
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				z-index: 21 - $i !important;
+			}
+		}
 	}
 
 	&--columns {
