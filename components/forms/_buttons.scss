@@ -245,6 +245,11 @@
 			}
 		}
 
+		&--text-align-left {
+			justify-content: flex-start !important;
+			text-align: left !important;
+		}
+
 		&[data-size-sm] {
 			@include font(1.3rem, 1.6rem);
 

@@ -27,6 +27,7 @@
 			}
 		}
 
+		&--icon,
 		&--magnifier-icon,
 		&--select-type,
 		&--pencil-icon {
@@ -46,6 +47,7 @@
 		}
 		&--label-type {
 
+			&.as-n-c-input-box--icon,
 			&.as-n-c-input-box--magnifier-icon {
 
 				.as-n-c-input-box__fake-label {
@@ -111,6 +113,7 @@
 			}
 		}
 
+		&--icon,
 		&--magnifier-icon {
 
 			.as-n-c-input-box__tag-container > input,
