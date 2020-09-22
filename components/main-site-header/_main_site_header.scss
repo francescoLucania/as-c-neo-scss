@@ -19,7 +19,7 @@
 	[data-background="gradient-medium-dark"] &,
 	[data-background="new-loyalty-program"] &,
 	.loyalty-program-header &,
-	// their modifications
+		// their modifications
 	&[data-background="color-light"] {
 
 		.main-site-header__menu-item a,
@@ -183,8 +183,8 @@
 
 	&[data-background="color-light"] {
 		background: $color-light;
-		
-		
+
+
 		+ .main-breadcrumbs {
 
 			&:not(:first-child) {
@@ -193,14 +193,14 @@
 				}
 			}
 		}
-		
+
 		+ router-outlet + div[data-app-page-name] .main-breadcrumbs {
 			background-color: transparent;
-			
+
 			@include mq-custom(min, 921px) {
 				margin-top: map_get($mq-container-indents, "sm");
 			}
-			
+
 			[data-background="new-loyalty-program"] & {
 				@include mq-custom(min, 921px) {
 					margin-top: 0;
@@ -208,7 +208,7 @@
 			}
 		}
 	}
-	
+
 	[data-background="new-loyalty-program"] & {
 		background: $brand-steelblue-light;
 	}
@@ -274,7 +274,7 @@
 		[data-background="gradient-dark"] &,
 		[data-background="gradient-medium-dark"] &,
 		.loyalty-program-header &,
-		// .main-site-header modifications
+			// .main-site-header modifications
 		[data-background="color-light"] & {
 
 			> img {
@@ -428,10 +428,8 @@
 		line-height: 1;
 		white-space: nowrap;
 
-		@include mq(sx) {
-			@include mq-custom(max, 1195px) {
-				display: none;
-			}
+		@include mq(sm) {
+			display: none;
 		}
 
 		&:not(:last-child) {
@@ -458,7 +456,7 @@
 
 		&:not(.main-site-header__menu-item--base),
 		&:not(.main-site-header__menu-item--all-breakpoints) {
-			@include mq(sx) {
+			@include mq(sm) {
 				@include mq-custom(max, 1195px) {
 					display: none;
 				}
