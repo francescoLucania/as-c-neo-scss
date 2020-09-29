@@ -428,10 +428,6 @@
 		line-height: 1;
 		white-space: nowrap;
 
-		@include mq(sm) {
-			display: none;
-		}
-
 		&:not(:last-child) {
 			margin-right: map_get($mq-indents, "sm");
 		}
@@ -450,15 +446,6 @@
 					@include mq-custom(max, 1280px) {
 						display: none;
 					}
-				}
-			}
-		}
-
-		&:not(.main-site-header__menu-item--base),
-		&:not(.main-site-header__menu-item--all-breakpoints) {
-			@include mq(sm) {
-				@include mq-custom(max, 1195px) {
-					display: none;
 				}
 			}
 		}
