@@ -111,7 +111,8 @@
 
 	font-weight: $font-weight;
 
-	> a {
+	a,
+	button {
 		font-weight: 700;
 	}
 }
@@ -121,7 +122,8 @@
 
 	font-weight: $font-weight;
 
-	> a {
+	a,
+	button {
 		font-weight: 700;
 	}
 }
@@ -131,7 +133,8 @@
 
 	font-weight: $font-weight;
 
-	> a {
+	a,
+	button {
 		font-weight: 500;
 	}
 }
@@ -141,7 +144,8 @@
 	line-height: 2rem;
 	font-weight: $font-weight;
 
-	> a {
+	a,
+	button {
 		font-weight: 500;
 	}
 }
@@ -214,11 +218,11 @@
 
 	@include mq(md) {
 		@include font(4rem, 4.4rem)
-    }
+	}
 
 	@include mq(lg) {
 		@include font(8rem, 8.8rem)
-    }
+	}
 }
 
 @mixin header-h1($font-weight: 700) {
