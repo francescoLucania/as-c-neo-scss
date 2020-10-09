@@ -411,8 +411,7 @@
 		}
 	}
 
-	&__action-string,
-	&__description-string {
+	&__sms-action {
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -422,40 +421,32 @@
 		text-align: center;
 		color: $color-light;
 
-		&.is-error {
-			font-weight: 500;
-		}
-
-		span {
-			color: $color-light;
-		}
-
 		button {
 			@include interact(text-decoration, underline);
 
 			font-weight: 500;
 			color: $color-base;
-
-			&:not(:last-child) {
-				margin-right: map_get($mq-container-indents, "sm");
-			}
-
-			&:focus {
-				outline: none;
-				text-decoration: underline;
-			}
 		}
 	}
 
-	&__action-string {
+	&__sms-action-row {
 		display: flex;
 		justify-content: center;
-		flex-wrap: wrap;
-	}
 
-	&__action-string-error {
-		margin-bottom: map_get($mq-container-indents, "sm") / 2;
-		width: 100%;
-		color: $color-error;
+		&:not(:last-child) {
+			margin-bottom: map_get($mq-container-indents, "sm") / 2;
+		}
+
+		* {
+			&.is-error {
+				color: $brand-grapefruit;
+
+
+			}
+
+			&:not(:last-child) {
+				margin-right: map_get($mq-container-indents, "sm") / 8;
+			}
+		}
 	}
 }
