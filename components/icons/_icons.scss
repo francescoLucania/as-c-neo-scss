@@ -39,6 +39,10 @@
 			@include size(2.5rem !important, 2.4rem !important);
 		}
 
+		&--rotate-180 {
+			transform: rotate(180deg);
+		}
+
 		&.is-white,
 		&.white {
 			fill: #ffffff !important;
