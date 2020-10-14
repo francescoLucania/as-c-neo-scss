@@ -317,7 +317,7 @@
 
 		&__tag-container > input,
 		&__fake-select-value {
-			@include text-base-big(500);
+			@include text-base-big(400);
 
 			position: relative;
 			z-index: 10;
@@ -325,7 +325,7 @@
 			padding: 20px map_get($mq-container-indents, "sm") 20px;
 			width: 100%;
 			text-align: left;
-			color: $color-base;
+			color: $color-lighter;
 			transition: box-shadow $transition-duration-base-min;
 
 			.as-n-c-input-box--reference-button-mod,
