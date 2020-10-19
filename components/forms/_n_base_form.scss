@@ -13,6 +13,7 @@
 	> .as-n-c-input-box {
 
 		input,
+		textarea,
 		.as-n-c-input-box__fake-select-value {
 			border-radius: $border-radius-base;
 		}
@@ -112,7 +113,9 @@
 			.n-base-form__row-col {
 
 				&:first-child,
+				&:not(:last-child) .as-n-c-input-box__fake-select-value,
 				&:not(:last-child) input,
+				&:not(:last-child) textarea,
 				&:not(:last-child) button {
 					&:not(.as-n-c-input-box__clear-button) {
 						border-bottom-left-radius: $border-radius-base !important;
@@ -120,7 +123,9 @@
 				}
 
 				&:not(:last-child),
+				&:not(:last-child) .as-n-c-input-box__fake-select-value,
 				&:not(:last-child) input,
+				&:not(:last-child) textarea,
 				&:not(:last-child) button {
 
 					&:not(.as-n-c-input-box__clear-button) {
@@ -132,7 +137,9 @@
 				}
 
 				&:last-child,
+				&:last-child .as-n-c-input-box__fake-select-value,
 				&:last-child input,
+				&:last-child textarea,
 				&:last-child button {
 
 					&:not(.as-n-c-input-box__clear-button) {
@@ -148,7 +155,9 @@
 
 			> .as-n-c-input-box {
 
-				.as-n-c-input-box__fake-select-value {
+				.as-n-c-input-box__fake-select-value,
+				.as-n-c-input-box__tag-container > input,
+				.as-n-c-input-box__tag-container > textarea {
 					border-bottom-right-radius: $border-radius-base;
 					border-bottom-left-radius: $border-radius-base;
 				}
@@ -226,6 +235,7 @@
 
 				&:first-child,
 				&:not(:last-child) input,
+				&:not(:last-child) textarea,
 				&:not(:last-child) button {
 					&:not(.as-n-c-input-box__clear-button) {
 						border-bottom-left-radius: $border-radius-base !important;
@@ -234,6 +244,7 @@
 
 				&:not(:last-child),
 				&:not(:last-child) input,
+				&:not(:last-child) textarea,
 				&:not(:last-child) button {
 
 					&:not(.as-n-c-input-box__clear-button) {
@@ -246,6 +257,7 @@
 
 				&:last-child,
 				&:last-child input,
+				&:last-child textarea,
 				&:last-child button {
 
 					&:not(.as-n-c-input-box__clear-button) {

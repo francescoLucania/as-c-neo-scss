@@ -45,6 +45,17 @@
 				z-index: 1;
 			}
 		}
+
+		&--icon-textarea {
+			.icon {
+				@include size(2rem);
+
+				position: absolute;
+				top: 23px;
+				z-index: 1;
+			}
+		}
+
 		&--label-type {
 
 			&.as-n-c-input-box--icon,
@@ -56,7 +67,8 @@
 			}
 
 			.as-n-c-input-box__fake-select-value,
-			.as-n-c-input-box__tag-container > input {
+			.as-n-c-input-box__tag-container > input,
+			.as-n-c-input-box__tag-container > textarea {
 				padding: 30px map_get($mq-container-indents, "sm") 10px;
 
 				.ng-invalid.is-error & {
@@ -114,14 +126,17 @@
 		}
 
 		&--icon,
+		&--icon-textarea,
 		&--magnifier-icon {
 
 			.as-n-c-input-box__tag-container > input,
+			.as-n-c-input-box__tag-container > textarea,
 			.as-n-c-input-box__fake-select-value {
 				padding-left: 52px; // padding + icon width + margin
 			}
 
-			.as-n-c-input-box__tag-container > input {
+			.as-n-c-input-box__tag-container > input
+			.as-n-c-input-box__tag-container > textarea,{
 
 				&:focus {
 					box-shadow: none;
@@ -168,6 +183,7 @@
 					left: map_get($mq-container-indents, "sm");
 				}
 
+				> textarea,
 				> input {
 					padding-left: 52px; // padding + icon width + margin
 				}
@@ -259,6 +275,7 @@
 
 			&:not(.as-n-c-input-box__tag-container--not-hover) {
 				&:hover {
+					> textarea,
 					> input,
 					.as-n-c-input-box__fake-select-value {
 						.mod_no-touchevents & {
@@ -269,11 +286,13 @@
 			}
 
 			&.as-n-c-input-box__tag-container--not-hover {
+				> textarea,
 				> input {
 					box-shadow: none !important;
 				}
 			}
 
+			> textarea,
 			> input {
 
 				&::placeholder {
@@ -316,6 +335,7 @@
 		}
 
 		&__tag-container > input,
+		&__tag-container > textarea,
 		&__fake-select-value {
 			@include text-base-big(400);
 
@@ -325,7 +345,7 @@
 			padding: 20px map_get($mq-container-indents, "sm") 20px;
 			width: 100%;
 			text-align: left;
-			color: $color-lighter;
+			color: $color-base;
 			transition: box-shadow $transition-duration-base-min;
 
 			.as-n-c-input-box--reference-button-mod,
