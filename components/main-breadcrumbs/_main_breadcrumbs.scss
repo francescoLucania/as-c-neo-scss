@@ -412,6 +412,15 @@
 
 	&__list-item {
 
+		& > a {
+
+			&:not(.main-breadcrumbs__state-indicator) {
+				@include mq-custom(max, 920px) {
+					width: 100%;
+				}
+			}
+		}
+
 		&:last-child {
 			@include mq-custom(max, "920px") {
 				display: none !important; // current hide(mobile)
