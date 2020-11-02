@@ -87,16 +87,6 @@
 					}
 				}
 
-				.ng-invalid.is-error & {
-
-					&::placeholder {
-						color: $color-error;
-					}
-
-					+ .as-n-c-input-box__fake-label {
-						color: $color-error;
-					}
-				}
 			}
 		}
 
