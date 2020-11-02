@@ -173,7 +173,7 @@
 				background: {
 					position: 50%;
 					size: contain;
-					image: url(../img/icons/arrow-black.svg);
+					image: url("#{$assets-path}/img/icons/arrow-black.svg");
 					repeat: no-repeat;
 				};
 
