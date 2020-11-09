@@ -6,11 +6,50 @@
 	background: $color-n-lightest;
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 1px $color-n-lightest;
 
+	&--no-box-shadow {
+		box-shadow: none;
+	}
+
+	&--error-status {
+		color: $color-error;
+
+		&::placeholder {
+			color: $color-error;
+		}
+
+		& .as-n-c-input-box__fake-label {
+			color: $color-error;
+		}
+
+		& .as-n-c-input-box--disable {
+
+			& button, input {
+				color: $color-error;
+
+				&::placeholder {
+					color: $color-error;
+				}
+			}
+		}
+
+		& button, input {
+			color: $color-error;
+
+			&::placeholder {
+				color: $color-error;
+			}
+		}
+	}
+
 	&--background-white {
 		background: #fff;
 	}
 
-	> .as-n-c-input-box {
+	&--no-border-radius-bottom {
+		border-radius: $border-radius-base $border-radius-base 0 0;
+	}
+
+	& .as-n-c-input-box {
 
 		input,
 		textarea,
@@ -284,6 +323,168 @@
 			background-color: #fff;
 		}
 
+		&--no-border-radius {
+
+			& .n-base-form__row-col-md-full-width {
+
+				&:not(:last-child) {
+
+					input {
+
+						&:not(.as-n-c-input-box__clear-button) {
+							border-bottom-right-radius: 0 !important;
+						}
+					}
+				}
+
+				&:first-child {
+
+					&:not(.as-n-c-input-box__clear-button) {
+						border-bottom-right-radius: 0 !important;
+					}
+				}
+
+				&:last-child {
+
+					&:not(.as-n-c-input-box__clear-button) {
+						border-bottom-left-radius: 0 !important;
+					}
+
+					input {
+
+						&:not(.as-n-c-input-box__clear-button) {
+							border-bottom-left-radius: 0 !important;
+							border-bottom-right-radius: 0 !important;
+						}
+					}
+				}
+			}
+
+			&:first-child, &:last-child {
+
+				@include mq-custom(max, 767px) {
+					border-radius: 0 !important;
+
+					.n-base-form__row-col-md-full-width {
+						border-bottom-left-radius: 0 !important;
+
+						&:first-child, &:first-child input, &:last-child, &:last-child input {
+							border-radius: 0 !important;
+						}
+
+						&:not(:last-child) input,
+						&:not(:last-child) button {
+
+							&:not(.as-n-c-input-box__clear-button) {
+								border-radius: 0 !important;
+							}
+						}
+
+						&:not(:last-child),
+						&:not(:last-child) input,
+						&:not(:last-child) button {
+
+							&:not(.as-n-c-input-box__clear-button) {
+								border-radius: 0 !important;
+							}
+						}
+
+						&:last-child,
+						&:last-child input,
+						&:last-child button {
+
+							&:not(.as-n-c-input-box__clear-button) {
+								border-bottom-right-radius: 0 !important;
+
+								@include mq-custom(max, 1195px) {
+									border-bottom-right-radius: 0 !important;
+									border-bottom-left-radius: 0 !important;
+								}
+							}
+						}
+
+						@include mq-custom(max, 767px) {
+							border-radius: 0 !important;
+						}
+					}
+				}
+			}
+
+			@include mq-custom(max, 767px) {
+
+				& .n-base-form__row-col-md-full-width {
+					border-radius: 0 !important;
+
+					&:first-child, &:last-child {
+						border-radius: 0 !important;
+					}
+				}
+			}
+		}
+
+		&--no-border-radius-bottom-mobile {
+
+			&:last-child, &:first-child {
+
+				& .n-base-form__row-col-md-full-width {
+
+					&:not(:last-child) {
+
+						input {
+
+							&:not(.as-n-c-input-box__clear-button) {
+								border-bottom-left-radius: 0 !important;
+							}
+						}
+					}
+
+					&:first-child {
+
+						&:not(.as-n-c-input-box__clear-button) {
+							border-bottom-left-radius: 0 !important;
+						}
+					}
+
+					&:last-child {
+
+						&:not(.as-n-c-input-box__clear-button) {
+							border-bottom-right-radius: 0 !important;
+						}
+
+						input {
+
+							&:not(.as-n-c-input-box__clear-button) {
+								border-bottom-left-radius: 0 !important;
+								border-bottom-right-radius: 0 !important;
+							}
+						}
+					}
+
+					@include mq-custom(max, 1195px) {
+
+						&:first-child {
+							border-radius: $border-radius-base $border-radius-base 0 0 !important;
+						}
+
+						&:last-child {
+							border-radius: 0 !important;
+
+							&:not(.as-n-c-input-box__clear-button) {
+								border-radius: 0 !important;
+							}
+
+							input {
+
+								&:not(.as-n-c-input-box__clear-button) {
+									border-radius: 0 !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		> .as-n-c-input-box {
 			width: 100%;
 
@@ -423,6 +624,42 @@
 		}
 	}
 
+	&__action-string,
+	&__description-string {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: translateY(100%);
+		padding: map_get($mq-container-indents, "sm") map_get($mq-container-indents, "sm") 0;
+		width: 100%;
+		text-align: center;
+		color: $color-light;
+
+		&.is-error {
+			font-weight: 500;
+		}
+
+		span {
+			color: $color-light;
+		}
+
+		button {
+			@include interact(text-decoration, underline);
+
+			font-weight: 500;
+			color: $color-base;
+
+			&:not(:last-child) {
+				margin-right: map_get($mq-container-indents, "sm");
+			}
+
+			&:focus {
+				outline: none;
+				text-decoration: underline;
+			}
+		}
+	}
+
 	&__sms-action {
 		position: absolute;
 		bottom: 0;
@@ -460,5 +697,17 @@
 				margin-right: map_get($mq-container-indents, "sm") / 8;
 			}
 		}
+	}
+
+	&__action-string {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&__action-string-error {
+		margin-bottom: map_get($mq-container-indents, "sm") / 2;
+		width: 100%;
+		color: $color-error;
 	}
 }

@@ -1095,4 +1095,18 @@
 			background-image: url("#{$assets-path}/img/as-c-brand-logo/zx.png");
 		}
 	}
+
+	&[data-brand-name="great-wall-motors"] {
+
+		&::before {
+			background-image: url("#{$assets-path}/img/as-c-brand-logo/great-wall-motors.png");
+		}
+	}
+
+	&[data-brand-name="cheryexeed"] {
+
+		&::before {
+			background-image: url("#{$assets-path}/img/as-c-brand-logo/cheryexeed.png");
+		}
+	}
 }
