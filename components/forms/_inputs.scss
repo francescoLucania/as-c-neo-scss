@@ -87,6 +87,16 @@
 					}
 				}
 
+				.ng-invalid.is-error & {
+
+					&::placeholder {
+						color: $color-error;
+					}
+
+					+ .as-n-c-input-box__fake-label {
+						color: $color-error;
+					}
+				}
 			}
 		}
 
@@ -327,7 +337,7 @@
 		&__tag-container > input,
 		&__tag-container > textarea,
 		&__fake-select-value {
-			@include text-base-big(400);
+			@include text-base-big(500);
 
 			position: relative;
 			z-index: 10;
@@ -392,7 +402,7 @@
 			top: map_get($mq-container-indents, "sm") / 2;
 			left: map_get($mq-container-indents, "sm");
 			margin-bottom: 2px;
-			color: $color-gray;
+			color: $color-lighter;
 		}
 
 		&__fake-select-value {
