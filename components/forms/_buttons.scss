@@ -104,13 +104,22 @@
 			}
 		}
 
+		&.button--no-margin-icon-mobile {
+
+			.icon {
+				@include mq-custom(max, 1196px) {
+					margin: 0;
+				}
+			}
+		}
+
 		&.button--secondary {
 			@include interact(background, #ffffff);
 			@include interact(box-shadow, #{0px 12px 12px rgba(0, 0, 0, 0.12)});
 			@include button-focus-secondary;
 
-			background: #fff;
 			border: 1px solid rgba(0, 0, 0, 0.07);
+			background: #fff;
 			color: $color-base !important;
 
 			&:disabled {
@@ -535,7 +544,7 @@
 
 		.tooltip &,
 		.popup-tooltip-block &
-        {
+		{
 
 			&:not(:first-child) {
 				margin-top: map_get($mq-container-indents, "sx") / 4;
