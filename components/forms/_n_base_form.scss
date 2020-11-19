@@ -207,6 +207,10 @@
 			background-color: #fff;
 		}
 
+		&--border-radius-base {
+			border-radius: 0 0 $border-radius-base $border-radius-base;
+		}
+
 		> .as-n-c-input-box {
 			width: 100%;
 
