@@ -289,6 +289,7 @@
 				> textarea,
 				> input {
 					box-shadow: none !important;
+					background: none;
 				}
 			}
 
@@ -407,6 +408,11 @@
 
 		&__fake-select-value {
 			@include ellipsis(100%, block);
+
+			&--border-radius-base {
+				border-radius: 0 0 $border-radius-base $border-radius-base;
+				overflow: hidden;
+			}
 		}
 
 		&__reference-button,
