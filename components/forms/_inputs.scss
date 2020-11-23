@@ -86,6 +86,17 @@
 						}
 					}
 				}
+
+				.ng-invalid.is-error & {
+
+					&::placeholder {
+						color: $color-error;
+					}
+
+					+ .as-n-c-input-box__fake-label {
+						color: $color-error;
+					}
+				}
 			}
 		}
 
@@ -278,21 +289,23 @@
 				> textarea,
 				> input {
 					box-shadow: none !important;
-					background: none;
 				}
 			}
 
 			> textarea,
 			> input {
 
-				&::placeholder {
-					font-weight: 400;
-					color: $color-lighter;
+				&[type="text"] {
+					&::placeholder {
+						font-weight: 400;
+						color: $color-lighter;
+					}
 				}
 
-				&[type="phone"] {
+				&[type="phone"], &[type="tel"] {
 
 					&::placeholder {
+						font-weight: 500;
 						color: $color-base;
 					}
 				}
@@ -384,7 +397,7 @@
 		}
 
 		&__fake-label {
-			@include text-base(500);
+			@include text-base(400);
 			@include ellipsis(calc(100% - #{map_get($mq-container-indents, "sx") / 2}), block);
 
 			content: attr(data-label);
@@ -397,11 +410,6 @@
 
 		&__fake-select-value {
 			@include ellipsis(100%, block);
-
-			&--border-radius-base {
-				border-radius: 0 0 $border-radius-base $border-radius-base;
-				overflow: hidden;
-			}
 		}
 
 		&__reference-button,
