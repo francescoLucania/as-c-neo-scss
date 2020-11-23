@@ -289,21 +289,24 @@
 				> textarea,
 				> input {
 					box-shadow: none !important;
-					background: none;
 				}
 			}
 
 			> textarea,
 			> input {
 
-				&::placeholder {
-					font-weight: 400;
-					color: $color-lighter;
+				&[type="text"] {
+					&::placeholder {
+						font-weight: 400;
+						color: $color-lighter;
+					}
 				}
 
-				&[type="phone"] {
+				&[type="phone"],
+				&[type="tel"] {
 
 					&::placeholder {
+						font-weight: 500;
 						color: $color-base;
 					}
 				}
@@ -408,11 +411,6 @@
 
 		&__fake-select-value {
 			@include ellipsis(100%, block);
-
-			&--border-radius-base {
-				border-radius: 0 0 $border-radius-base $border-radius-base;
-				overflow: hidden;
-			}
 		}
 
 		&__reference-button,
