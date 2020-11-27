@@ -295,14 +295,12 @@
 			> textarea,
 			> input {
 
-				&[type="text"] {
-					&::placeholder {
-						font-weight: 400;
-						color: $color-lighter;
-					}
+				&::placeholder {
+					font-weight: 400;
+					color: $color-lighter;
 				}
 
-				&[type="phone"], &[type="tel"] {
+				&[type="tel"] {
 
 					&::placeholder {
 						font-weight: 500;
