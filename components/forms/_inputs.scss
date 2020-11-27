@@ -295,14 +295,11 @@
 			> textarea,
 			> input {
 
-				&[type="text"] {
-					&::placeholder {
-						font-weight: 400;
-						color: $color-lighter;
-					}
+				&::placeholder {
+					font-weight: 400;
+					color: $color-lighter;
 				}
 
-				&[type="phone"],
 				&[type="tel"] {
 
 					&::placeholder {
@@ -398,7 +395,7 @@
 		}
 
 		&__fake-label {
-			@include text-base(500);
+			@include text-base(400);
 			@include ellipsis(calc(100% - #{map_get($mq-container-indents, "sx") / 2}), block);
 
 			content: attr(data-label);
