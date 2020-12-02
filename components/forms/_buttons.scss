@@ -138,6 +138,17 @@
 			}
 		}
 
+		&.button--no-border-right {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			border-right: none;
+		}
+
+		&.button--no-border-radius-left {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
 		&.button--phone {
 
 			.icon {
