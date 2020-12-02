@@ -147,13 +147,13 @@
 			}
 		}
 
-		&--no-border-right {
+		&.button--no-border-right {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 			border-right: none;
 		}
 
-		&--no-border-radius-left {
+		&.button--no-border-radius-left {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
