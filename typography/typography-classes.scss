@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+// atomic classes
+.as-c-header-h1 {
+	@include as-c-header-h1;
+}
+
+.as-c-header-h2 {
+	@include as-c-header-h2;
+}
+
+.as-c-header-h3 {
+	@include as-c-header-h3;
+}
+
+.as-c-header-h4 {
+	@include as-c-header-h4;
+}
+
+.as-c-header-h5 {
+	@include as-c-header-h5;
+}
+
+.as-c-subtitle-1 {
+	@include as-c-subtitle-1;
+}
+
+.as-c-subtitle-2 {
+	@include as-c-subtitle-2;
+}
+
+.as-c-text-xl {
+	@include as-c-text-xl;
+}
+
+.as-c-text-lg {
+	@include as-c-text-lg;
+}
+
+.text-base {
+	@include text-base;
+}
+
+.text-base-big {
+	@include text-base-big;
+}
+
+.text-base-medium {
+	@include text-base-medium;
+}
+
+// old atomic classes
+
+.header-h1-lg {
+	@include header-h1-lg;
+
+	> a {
+		@include header-h1-lg;
+	}
+}
+
+.header-h1 {
+	@include header-h1;
+
+	> a {
+		@include header-h1;
+	}
+}
+
+.header-h1-black {
+	@include header-h1-black;
+
+	> a {
+		@include header-h1-black;
+	}
+}
+
+.header-h2 {
+	@include header-h2;
+
+	> a {
+		@include header-h2;
+	}
+}
+
+.header-brand-h3-black {
+	@include header-brand-h3-black;
+
+	> a {
+		@include header-brand-h3-black;
+	}
+}
+
+.header-model-card-h3 {
+	@include header-model-card-h3;
+
+	> a {
+		@include header-model-card-h3;
+	}
+}
+
+.header-model-settings-h3 {
+	@include header-model-settings-h3;
+
+	> a {
+		@include header-model-settings-h3;
+	}
+}
+
+.header-offer-h3 {
+	@include header-offer-h3;
+
+	> a {
+		@include header-offer-h3;
+	}
+}
+
+.header-equipment-h4 {
+	@include header-equipment-h4;
+
+	> a {
+		@include header-equipment-h4;
+	}
+}
+
+.header-offer-h5 {
+	@include header-offer-h5;
+
+	> a {
+		@include header-offer-h5;
+	}
+}
+
+.header-comparing-h5 {
+	@include header-comparing-h5;
+
+	> a {
+		@include header-comparing-h5;
+	}
+}
+
+.text-base {
+	@include text-base;
+}
+
+.link-base {
+	@include link-base;
+}
+
+.text-base-big {
+	@include text-base-big;
+}
+
+.text-offer {
+	@include text-offer;
+}
+
+.link-offer {
+	@include link-offer;
+}
+
+.text-small {
+	@include text-small;
+}
+
+.link-small {
+	@include link-small;
+}
+
+.text-comparing {
+	@include text-comparing;
+}
+
+.text-minimal {
+	@include text-minimal;
+}
+
+.link-minimal {
+	@include link-minimal;
+}

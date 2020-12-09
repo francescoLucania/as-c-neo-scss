@@ -280,7 +280,7 @@
 		}
 
 		.main-breadcrumbs.is-ellipsis & {
-			max-width: 100%;
+			max-width: calc(100% + #{map_get($mq-container-indents, "sx") / 2});
 		}
 	}
 
