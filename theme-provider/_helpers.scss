@@ -130,6 +130,17 @@
 	pointer-events: none !important;
 }
 
+// colors data data-background
+* {
+	&[data-background='clinging-pearl'] {
+		background-color: $color-clinging-pearl;
+	}
+
+	&[data-background='porcelain'] {
+		background-color: $color-lightest-porcelain;
+	}
+}
+
 // todo Кандидаты на удаление
 .is-desktop {
 	display: none;

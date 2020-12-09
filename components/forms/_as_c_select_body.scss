@@ -7,17 +7,21 @@
 
 	@include mq(sm) {
 		min-height: 25.8rem;
-		max-height: calc(100vh - #{map_get($mq-container-indents, "sx")});
+		//max-height: calc(100vh - #{map_get($mq-container-indents, "sx")});
 		border-top-right-radius: $border-radius-base;
 		border-top-left-radius: $border-radius-base;
 	}
 
 	@include mq(sx) {
-		margin-top: -4px;
-		padding-top: 4px;
+		margin-top: calc(-1 * #{map_get($mq-container-indents, 'sm')} / 4);
+		padding-top: calc(#{map_get($mq-container-indents, 'sm')} / 4);
 		border-bottom-right-radius: $border-radius-base;
 		border-bottom-left-radius: $border-radius-base;
 		//box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.07);
+	}
+
+	&--min-height {
+		min-height: auto;
 	}
 
 	&--dropdown-type {
@@ -27,11 +31,31 @@
 	}
 
 	&--mq-sm-fixed-footer {
-		margin-bottom: 63px;
+		margin-bottom: calc(#{map_get($mq-container-indents, 'sx')} - 1px);
+	}
+
+	&__dont-find-auto {
+		@include text-base(700);
+		display: none;
+
+		height: map_get($mq-container-indents, 'sx');
+		align-items: center;
+		justify-content: center;
+		border-top: 1px solid $color-n-lightest;
+		width: 100%;
+
+		@include mq(sm-md) {
+			display: flex;
+		}
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	&__input {
 		display: block;
+		border-bottom: 1px solid $color-n-lightest;
 
 		&:not(.as-c-select-body__input--all-bp) {
 			@include mq(sx) {
@@ -42,7 +66,7 @@
 		&.as-c-select-body__input---all-bp {
 			@include mq(sx) {
 				border-top: 1px solid $color-n-lightest;
-				margin-top: -4px // magic number;
+				margin-top: -4px; // magic number;
 			}
 		}
 
@@ -61,14 +85,18 @@
 	&__container {
 		@include scroll-not-scrollbar(hidden, auto);
 
-		max-height: 500px;
+		max-height: 376px;
 
 		@include mq(sm) {
-			max-height: calc(100vh - #{map_get($mq-container-indents, "sx")} - 65px);
+			max-height: calc(100vh - #{map_get($mq-container-indents, 'sx')} - 65px);
 		}
 
 		@include mq(sx) {
-			padding: map_get($mq-container-indents, "sm") / 2 - 1px 0 map_get($mq-container-indents, "sm") / 2;
+			padding: map_get($mq-container-indents, 'sm') / 2 - 1px 0 map_get($mq-container-indents, 'sm') / 2;
+		}
+
+		&--no-fixed-height {
+			max-height: none;
 		}
 	}
 
@@ -88,215 +116,197 @@
 		@include mq(sx) {
 			@include col-size(1/3);
 
-			padding: {
-				right: map_get($mq-container-indents, "sm") / 2;
-				left: map_get($mq-container-indents, "sm") / 2;
-			};
-		}
-	}
-
-	&__item {
-		@include interact(background-color, $color-lightest-border);
-
-		position: relative;
-		display: block;
-		padding: map_get($mq-container-indents, "sm") / 2 map_get($mq-container-indents, "sm");
-		width: 100%;
-		text-align: left;
-		transition: background-color $transition-duration-base-min;
-
-		@include mq(sm) {
-			@include text-base-big(500);
-
-			padding: 20px map_get($mq-container-indents, "sm") 19px;
-			border-bottom: 1px solid $color-n-lightest;
-		}
-
-		&:focus {
-			outline: none;
-		}
-
-		&.as-c-select-body__item--type-icon {
-			position: relative;
-
-			.as-c-select-body__container-grid & {
+			&--full-width {
 				@include mq(sx) {
-					padding-left: 5.2rem;
+					width: 100%;
 				}
 			}
 
-			&.is-checked {
-				padding-right: 5.2rem;
-
-				.icon {
-					opacity: 1;
-				}
-			}
-			//
-			//.icon {
-			//	@include size(2rem);
-			//
-			//	position: absolute;
-			//	top: 50%;
-			//	right: map_get($mq-container-indents, "sm");
-			//	transform: translateY(-50%);
-			//	opacity: 0;
-			//
-			//	.as-c-select-body__container-grid & {
-			//		@include mq(sx) {
-			//			right: auto;
-			//			left: map_get($mq-container-indents, "sm");
-			//		}
-			//	}
-			//}
-		}
-
-
-
-		.as-c-select-body__container-grid & {
-
-			@include mq(sx) {
-				@include interact(background-color, #fff);
-				@include interact(text-decoration, underline);
-
-				&:focus {
-					text-decoration: underline;
-				}
+			&--inline-block {
+				display: inline-block;
 			}
 		}
-	}
 
-	&__list-item-input {
-		@include size(100%);
+		&__item {
+			@include interact(background-color, $color-lightest-border);
 
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 1;
-		outline: none;
-		cursor: pointer;
+			position: relative;
+			display: block;
+			padding: map_get($mq-container-indents, 'sm') / 2 map_get($mq-container-indents, 'sm');
+			width: 100%;
+			text-align: left;
+			transition: background-color $transition-duration-base-min;
 
-		.mod_no-touchevents & {
+			@include mq(sm) {
+				@include text-base-big(500);
 
-			&:hover {
+				padding: 20px map_get($mq-container-indents, 'sm') 19px;
+				border-bottom: 1px solid $color-n-lightest;
+			}
 
-				+ .as-c-select-body__list-item-content-icon {
-					border-color: $color-base;
-				}
+			&:focus {
+				outline: none;
+			}
 
-				+ .as-c-select-body__list-item-content-icon {
-					@include mq(sm) {
-						border-color: $color-base;
+			&.as-c-select-body__item--type-icon {
+				position: relative;
+
+				.as-c-select-body__container-grid & {
+					@include mq(sx) {
+						padding-left: 5.2rem;
 					}
 				}
 
-				+ .interactive-user-popover-body__list-item-content .interactive-user-popover-body__list-item-content-icon-clear {
-					background-color: $color-gray;
+				&.is-checked {
+					padding-right: 5.2rem;
+
+					.icon {
+						opacity: 1;
+					}
+				}
+			}
+
+			.as-c-select-body__container-grid & {
+				@include mq(sx) {
+					@include interact(background-color, #fff);
+					@include interact(text-decoration, underline);
+
+					&:focus {
+						text-decoration: underline;
+					}
 				}
 			}
 		}
 
-		&:focus {
+		&__list-item-input {
+			@include size(100%);
 
-			+ .as-c-select-body__list-item-content-icon {
-				border-color: $color-base;
-			}
-
-			+ .interactive-user-popover-body__list-item-content .interactive-user-popover-body__list-item-content-icon-clear {
-				background-color: $color-gray;
-			}
-		}
-
-		.is-checked &,
-		&:checked {
-
-			+ .as-c-select-body__list-item-content-icon {
-				border-color: $brand-turquoise;
-				background: $brand-turquoise;
-
-				.icon {
-					opacity: 1;
-				}
-			}
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			outline: none;
+			cursor: pointer;
 
 			.mod_no-touchevents & {
-
 				&:hover {
 					+ .as-c-select-body__list-item-content-icon {
-						border-color: $brand-green-pea;
-						background-color: $brand-green-pea;
+						border-color: $color-base;
+					}
+
+					+ .as-c-select-body__list-item-content-icon {
+						@include mq(sm) {
+							border-color: $color-base;
+						}
+					}
+
+					+ .interactive-user-popover-body__list-item-content
+					.interactive-user-popover-body__list-item-content-icon-clear {
+						background-color: $color-gray;
 					}
 				}
 			}
 
 			&:focus {
 				+ .as-c-select-body__list-item-content-icon {
-					border-color: $brand-green-pea;
-					background-color: $brand-green-pea;
+					border-color: $color-base;
+				}
+
+				+ .interactive-user-popover-body__list-item-content
+				.interactive-user-popover-body__list-item-content-icon-clear {
+					background-color: $color-gray;
+				}
+			}
+
+			.is-checked &,
+			&:checked {
+				+ .as-c-select-body__list-item-content-icon {
+					border-color: $brand-turquoise;
+					background: $brand-turquoise;
+
+					.icon {
+						opacity: 1;
+					}
+				}
+
+				.mod_no-touchevents & {
+					&:hover {
+						+ .as-c-select-body__list-item-content-icon {
+							border-color: $brand-green-pea;
+							background-color: $brand-green-pea;
+						}
+					}
+				}
+
+				&:focus {
+					+ .as-c-select-body__list-item-content-icon {
+						border-color: $brand-green-pea;
+						background-color: $brand-green-pea;
+					}
 				}
 			}
 		}
-	}
 
-	&__item-header,
-	&__item-description {
-		//@include ellipsis(100%, block);
+		&__item-header,
+		&__item-description {
+			//@include ellipsis(100%, block);
 
-		display: block;
-	}
-
-	&__list-item-content-icon {
-		@include size(2rem);
-
-		position: absolute;
-		top: 20px;
-		right: map_get($mq-container-indents, "sm");
-		min-width: 2rem;
-		border-radius: 50%;
-		border: 1px solid $color-gray;
-		transition: border-color $transition-duration-base-min, background-color $transition-duration-base-min;
-
-		@include mq(sx) {
-			top: map_get($mq-container-indents, "sm") / 2;
+			display: block;
 		}
 
-		&[data-color-name="#fff"],
-		&[data-color-name="#ffffff"],
-		&[data-color-name="white"] {
-			> .icon {
-				fill: $color-base;
-			}
-		}
-
-		> .icon {
-			@include size(100%);
+		&__list-item-content-icon {
+			@include size(2rem);
 
 			position: absolute;
-			top: 0;
-			left: 0;
-			fill: #fff;
-			opacity: 0;
-			transition: opacity $transition-duration-base-min;
-		}
-
-		.as-c-select-body__container-grid & {
+			top: 20px;
+			right: map_get($mq-container-indents, 'sm');
+			min-width: 2rem;
+			border-radius: 50%;
+			border: 1px solid $color-gray;
+			transition: border-color $transition-duration-base-min,
+			background-color $transition-duration-base-min;
 
 			@include mq(sx) {
-				right: auto;
-				left: map_get($mq-container-indents, "sm");
+				top: map_get($mq-container-indents, 'sm') / 2;
+			}
+
+			&[data-color-name='#fff'],
+			&[data-color-name='#ffffff'],
+			&[data-color-name='white'] {
+				> .icon {
+					fill: $color-base;
+				}
+			}
+
+			> .icon {
+				@include size(100%);
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				fill: #fff;
+				opacity: 0;
+				transition: opacity $transition-duration-base-min;
+			}
+
+			.as-c-select-body__container-grid & {
+				@include mq(sx) {
+					right: auto;
+					left: map_get($mq-container-indents, 'sm');
+				}
 			}
 		}
-	}
 
-	&__item-header {
+		&__item-header {
+			font-weight: 500;
+		}
 
-	}
+		&__item-description {
+			color: $color-lighter;
+		}
 
-	&__item-description {
-		color: $color-lighter;
-	}
-
-	&__item-description {
-		color: $color-placeholder;
+		&__item-description {
+			color: $color-placeholder;
+		}
 	}
 }
