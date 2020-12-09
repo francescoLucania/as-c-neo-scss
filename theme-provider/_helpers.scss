@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+.position-relative {
+	position: relative !important;
+}
+
+.hide,
+.is-hide {
+	display: none !important;
+}
+
+// mq
+.not-md {
+	display: block !important;
+
+	@include mq(md) {
+		display: none !important;
+	}
+}
+
+.not-sm {
+	display: none !important;
+
+	@include mq(sx) {
+		display: block !important;
+	}
+
+	&--inline {
+		@include mq(sx) {
+			display: inline !important;
+		}
+	}
+}
+
+.not-sx {
+	@include mq(sx) {
+		@include mq-custom(max, 920px) {
+			display: none !important;
+		}
+	}
+}
+
+.not-sm-md {
+	display: none !important;
+
+	@include mq-custom(max, 767px) {
+		display: block !important;
+	}
+}
+
+.is-lg {
+	display: none !important;
+
+	@include mq(lg) {
+		display: block !important;
+	}
+}
+
+.is-sm {
+	display: none !important;
+
+	@include mq(sm) {
+		display: block !important;
+	}
+
+	&--flex {
+		@include mq(sm) {
+			display: flex !important;
+		}
+	}
+}
+
+.is-md {
+	display: none !important;
+
+	@include mq(md) {
+		display: block !important;
+	}
+}
+
+.is-sm-md {
+	display: none !important;
+
+	@include mq(sm-md) {
+		display: block !important;
+	}
+}
+
+.is-sx {
+	@include mq(sm) {
+		display: none !important;
+	}
+}
+
+.not-lg {
+	@include mq(lg) {
+		display: none !important;
+	}
+}
+// mq
+
+// font/text
+.text-align-center {
+	text-align: center !important;
+}
+
+.text-align-left {
+	text-align: left !important;
+}
+
+.font-weight-normal {
+	font-weight: 400 !important;
+}
+
+.position-relative {
+	position: relative !important;
+}
+// font/text
+
+.white-space-no-wrap {
+	white-space: nowrap;
+}
+
+.overflow-hidden,
+.hidden {
+	overflow: hidden;
+}
+
+.pointer-events-none {
+	pointer-events: none !important;
+}
+
+// todo Кандидаты на удаление
+.is-desktop {
+	display: none;
+
+	@include mq(md) {
+		display: block;
+	}
+}
+.is-md-x {
+	@include mq-custom(min, 1300px) {
+
+	}
+}
+.body-image-jpg {
+	display: none;
+
+	.mod_no-webp & {
+		display: block;
+	}
+}
+.body-image-webp {
+	display: none;
+
+	.mod_webp & {
+		display: block;
+	}
+}
+.m-b-16 {
+	margin-bottom: map_get($mq-container-indents, "sx") / 4 !important;
+}
+.tooltip-box {
+	position: relative !important;
+}
+.order-1 {
+	order: 1;
+}
+.order-2 {
+	order: 2;
+}
+// todo Кандидаты на удаление
