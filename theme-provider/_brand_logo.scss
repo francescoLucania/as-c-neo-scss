@@ -345,7 +345,9 @@
 	}
 
 	&[data-brand-name="ГАЗ"],
-	&[data-brand-name="GAZ"] {
+	&[data-brand-name="газ"],
+	&[data-brand-name="GAZ"],
+	&[data-brand-name="gaz"] {
 
 		&::before {
 			background-image: url("#{$assets-path}img/as-c-brand-logo/gaz.png");
@@ -823,14 +825,14 @@
 	&[data-brand-name="great-wall-motors"] {
 
 		&::before {
-			background-image: url("..img/as-c-brand-logo/great-wall-motors.png");
+			background-image: url("#{$assets-path}img/as-c-brand-logo/great-wall-motors.png");
 		}
 	}
 
 	&[data-brand-name="cheryexeed"] {
 
 		&::before {
-			background-image: url("..img/as-c-brand-logo/cheryexeed.png");
+			background-image: url("#{$assets-path}img/as-c-brand-logo/cheryexeed.png");
 		}
 	}
 }
