@@ -835,4 +835,11 @@
 			background-image: url("#{$assets-path}img/as-c-brand-logo/cheryexeed.png");
 		}
 	}
+
+	&[data-brand-name="iveco"] {
+
+		&::before {
+			background-image: url("#{$assets-path}img/as-c-brand-logo/iveco.png");
+		}
+	}
 }
