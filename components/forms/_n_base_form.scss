@@ -213,10 +213,6 @@
 
 		> .as-n-c-input-box {
 			width: 100%;
-
-			.as-n-c-input-box__fake-select-value {
-
-			}
 		}
 	}
 
@@ -587,13 +583,6 @@
 		background: #fff;
 		overflow: hidden;
 
-		.n-base-form--dealers & {
-			@include mq(sm) {
-				overflow: visible;
-				display: block;
-			}
-		}
-
 		.slick-list .slick-slide {
 			&:not(:last-child) {
 				.n-base-form__filter-slider-row-col {
@@ -631,24 +620,6 @@
 				height: 100%;
 				background: $color-n-lightest;
 				content: "";
-
-				.n-base-form--dealers & {
-					@include mq(sm){
-						@include size(100%,1px);
-
-						top: auto;
-						left: 0;
-					}
-				}
-			}
-		}
-
-		.n-base-form--dealers & {
-			@include mq(sx) {
-				@include col-size(1/3);
-			}
-			@include mq(sm) {
-				@include col-size(1);
 			}
 		}
 	}
