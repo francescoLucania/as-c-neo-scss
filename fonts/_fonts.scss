@@ -32,3 +32,27 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+@if $enable-new-mq-rules == true {
+	@font-face {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+	url("#{$assets-path}/fonts/roboto-v20-latin_cyrillic-regular.woff2") format("woff2"),
+	}
+
+	@font-face {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 500;
+	url("#{$assets-path}/fonts/roboto-v20-latin_cyrillic-500.woff2") format("woff2")
+	}
+	/* roboto-700 - latin_cyrillic */
+	@font-face {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 700;
+	url("#{$assets-path}/fonts/roboto-v20-latin_cyrillic-700.woff2") format("woff2")
+	}
+
+}
