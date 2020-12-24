@@ -5,6 +5,37 @@
 	z-index: 154;
 	background: #fff;
 
+	@include mq-custom(max, 920px) {
+		position: relative;
+		//position: sticky;
+		top: -1px; // border-width
+	}
+
+	&:not(:first-child) {
+		@include mq(md) {
+			margin-top: map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+
+	&:not(:last-child) {
+
+		&:not(.main-breadcrumbs--no-margin-bottom) {
+			margin-bottom: map_get($mq-container-indents, "sx") / 2;
+		}
+	}
+
+	&.main-breadcrumbs--turquoise-background {
+		background-color: $brand-turquoise;
+
+		@include mq(sx) {
+			padding-top: map_get($mq-container-indents, "sm");
+		}
+	}
+
+	&.main-breadcrumbs--filters-used {
+		background: $color-lightest-border;
+	}
+
 	[data-background="new-loyalty-program"] &,
 	[data-background="promo"] &,
 	[data-color-type="vtb"] &,
@@ -29,29 +60,6 @@
 
 	[data-color-type="vtb"] & {
 		background: $brand-vtb-blue;
-	}
-
-	//[data-color-type="gazprombank-blue"] & {
-	//	background: $brand-gazprom-blue;
-	//}
-
-	@include mq-custom(max, 920px) {
-		position: relative;
-		//position: sticky;
-		top: -1px; // border-width
-	}
-
-	&:not(:first-child) {
-		@include mq(md) {
-			margin-top: map_get($mq-container-indents, "sx") / 2;
-		}
-	}
-
-	&:not(:last-child) {
-
-		&:not(.main-breadcrumbs--no-margin-bottom) {
-			margin-bottom: map_get($mq-container-indents, "sx") / 2;
-		}
 	}
 
 	[data-background="clinging-pearl"] &,
@@ -265,10 +273,6 @@
 		.main-breadcrumbs__list {
 			transform: translateY(0);
 		}
-	}
-
-	&--filters-used {
-		background: $color-lightest-border;
 	}
 
 	&__root-list-container {
