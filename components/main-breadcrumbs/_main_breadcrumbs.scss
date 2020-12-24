@@ -27,8 +27,33 @@
 	&.main-breadcrumbs--turquoise-background {
 		background-color: $brand-turquoise;
 
+		@include mq-custom(max, 767px) {
+			margin-bottom: -1px;
+		}
+
 		@include mq(sx) {
 			padding-top: map_get($mq-container-indents, "sm");
+		}
+
+		.main-breadcrumbs__root-list-main:first-child,
+		.main-breadcrumbs__list-item:first-child {
+			border-bottom-color: $brand-turquoise;
+		}
+
+		.main-breadcrumbs__state-indicator {
+
+			&:focus {
+				.icon {
+					fill: $color-base;
+				}
+			}
+		}
+
+		&.is-open {
+			.main-breadcrumbs__root-list-main:first-child,
+			.main-breadcrumbs__list-item:first-child {
+				border-bottom-color: $color-lightest-border !important;
+			}
 		}
 	}
 
